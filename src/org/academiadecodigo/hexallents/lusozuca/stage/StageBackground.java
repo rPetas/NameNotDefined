@@ -12,4 +12,5 @@ public enum StageBackground {
     GREEN,
     MAGENTA,
     NOCOLOR
+
 }

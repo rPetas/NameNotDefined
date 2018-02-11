@@ -20,7 +20,7 @@ public class Position {
         this.row = row;
         this.stage = stage;
         rectangle = new Rectangle();
-        this.color = StageBackground.BLACK;
+        this.color = StageBackground.BLUE;
         show();
     }
 
