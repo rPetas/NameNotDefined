@@ -19,6 +19,7 @@ public class Stage {
 
     }
 
+    //Creates canvas
     public void init(){
         rectangle = new Rectangle(PADDING, PADDING, getWidth(), getHeight());
         rectangle.fill();
@@ -48,6 +49,13 @@ public class Stage {
         return rectangle.getY();
     }
 
+    public int colToPixel(int column) {
+        return column * CELL_SIZE + PADDING;
+    }
+
+    public int rowToPixel(int row) {
+        return row * CELL_SIZE + PADDING;
+    }
 
     public Position makePosition(int col, int row){
         return new Position(col, row, this);

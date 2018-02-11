@@ -12,5 +12,4 @@ public enum StageBackground {
     WHITE,
     NOCOLOR,
     BLACK
-
 }
