@@ -23,10 +23,11 @@ public class Game {
 
     public void init() {
         stage.init();
-        platforms = new Platform[2];
-        platforms[0] = new Platform(0, stage.getRow() - Platform.BLOCK_HEIGHT, stage, 3);
-        platforms[1] = new Platform(0, stage.getRow() - Platform.BLOCK_HEIGHT, stage, 3);
-        //platforms[1] = new Platform(0, 30, stage, 1);
+        platforms = new Platform[4];
+        platforms[0] = new Platform(0, stage.getRow() - Platform.BLOCK_SIZE, stage, 14);    //stage.getRow() - Platform.BLOCK_SIZE = quantidade de linhas do Stage - tamanho do bloco em linhas (não em pixels)
+        platforms[1] = new Platform(6 * Platform.BLOCK_SIZE, 6 * Platform.BLOCK_SIZE, stage, 14);
+        platforms[2] = new Platform(0, 3 * Platform.BLOCK_SIZE, stage, 14);
+        platforms[3] = new Platform(6 * Platform.BLOCK_SIZE, 0, stage, 14);
         //Platform platform1 = new Platform(100, 0, stage, 20);
         //platforms.makePlatform(1);
     }

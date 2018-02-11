@@ -13,13 +13,13 @@ public class Platform {
     private Position pos;
     private Stage stage;
     private StageBackground color;
-    public static final int BLOCK_WIDTH = 40;
-    public static final int BLOCK_HEIGHT = 10;
+    public static final int BLOCK_SIZE = 5;   //5 colunas ou linhas
+    //public static final int BLOCK = 54;  //in pixels
 
 
     public Platform(int col, int row, Stage stage, int numberOfBlocks){
         pos = new Position(col, row, stage);
-        rectangle = new Rectangle(stage.colToPixel(col), stage.rowToPixel(row), Stage.CELL_SIZE * BLOCK_WIDTH * numberOfBlocks, Stage.CELL_SIZE * BLOCK_HEIGHT);
+        rectangle = new Rectangle(stage.colToPixel(col), stage.rowToPixel(row), Stage.CELL_SIZE * BLOCK_SIZE * numberOfBlocks, Stage.CELL_SIZE * BLOCK_SIZE);
         rectangle.setColor(SimpleGfxColorMapper.getColor(StageBackground.MAGENTA));
         rectangle.fill();
         //makePlatform(1);
@@ -37,3 +37,15 @@ public class Platform {
 
 
 }
+
+
+/*
+    public Platform(int col, int row, Stage stage, int numberOfBlocks){
+        pos = new Position(col, row, stage);
+        rectangle = new Rectangle(stage.colToPixel(col), stage.rowToPixel(row), Stage.CELL_SIZE * BLOCK_WIDTH * numberOfBlocks, Stage.CELL_SIZE * BLOCK_HEIGHT);
+        rectangle.setColor(SimpleGfxColorMapper.getColor(StageBackground.MAGENTA));
+        rectangle.fill();
+        //makePlatform(1);
+        pos.show();
+    }
+ */

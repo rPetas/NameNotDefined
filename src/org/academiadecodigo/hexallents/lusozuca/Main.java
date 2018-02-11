@@ -5,8 +5,8 @@ public class Main {
         System.out.println("Hello World");
 
 
-        Game g = new Game(192, 108, 200);
-
+        Game g = new Game(100, 50, 200);
+        //antigo: colunas 192 e linhas 108
         g.init();
         //g.start();
     }
