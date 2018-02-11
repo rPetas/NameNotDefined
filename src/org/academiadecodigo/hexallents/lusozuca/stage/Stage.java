@@ -39,7 +39,7 @@ public class Stage {
     public int getHeight(){
         return row*CELL_SIZE;
     }
-git
+
     public int getX(){
         return rectangle.getX();
     }
@@ -47,6 +47,7 @@ git
     public int getY(){
         return rectangle.getY();
     }
+
 
     public Position makePosition(int col, int row){
         return new Position(col, row, this);

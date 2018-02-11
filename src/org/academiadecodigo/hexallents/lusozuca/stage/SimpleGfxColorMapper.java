@@ -1,6 +1,5 @@
 package org.academiadecodigo.hexallents.lusozuca.stage;
 
-import org.academiadecodigo.hexallents.lusozuca.stage.StageBackground;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 
 public class SimpleGfxColorMapper {
@@ -13,7 +12,7 @@ public class SimpleGfxColorMapper {
             Color.WHITE
     };
 
-    public static Color getColor(StageBackground color){
+    public static Color getColor(StageColor color){
 
         Color sGfxColor = null;
 

@@ -23,6 +23,8 @@ public class Game {
 
         platforms = new Platform[3];
 
+        player= new Player(stage.makePosition(200,80));
+
 
         //platforms[0] = new Platform(0, 40);
 

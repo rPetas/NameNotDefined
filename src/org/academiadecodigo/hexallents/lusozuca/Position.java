@@ -1,9 +1,8 @@
 package org.academiadecodigo.hexallents.lusozuca;
 
-import javafx.geometry.Pos;
 import org.academiadecodigo.hexallents.lusozuca.stage.SimpleGfxColorMapper;
 import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
-import org.academiadecodigo.hexallents.lusozuca.stage.StageBackground;
+import org.academiadecodigo.hexallents.lusozuca.stage.StageColor;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 public class Position {
@@ -12,7 +11,7 @@ public class Position {
     private Stage stage;
     private int col;
     private int row;
-    private StageBackground color;
+    private StageColor color;
 
 
     public Position(int col, int row, Stage stage) {
@@ -20,7 +19,7 @@ public class Position {
         this.row = row;
         this.stage = stage;
         rectangle = new Rectangle();
-        this.color = StageBackground.BLACK;
+        this.color = StageColor.NOCOLOR;
         show();
     }
 
@@ -51,12 +50,12 @@ public class Position {
         return row;
     }
 
-    public StageBackground getColor() {
+    public StageColor getColor() {
         return color;
 
     }
 
-    public void setColor(StageBackground color) {
+    public void setColor(StageColor color) {
         rectangle.setColor(SimpleGfxColorMapper.getColor(color));
         this.color = color;
         show();
