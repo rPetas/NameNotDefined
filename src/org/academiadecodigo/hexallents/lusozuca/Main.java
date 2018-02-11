@@ -8,6 +8,6 @@ public class Main {
         Game g = new Game(220, 100, 200);
 
         g.init();
-        g.start();
+        //g.start();
     }
 }

@@ -1,6 +1,7 @@
-package org.academiadecodigo.hexallents.lusozuca;
+package org.academiadecodigo.hexallents.lusozuca.stage;
 
 import javafx.geometry.Pos;
+import org.academiadecodigo.hexallents.lusozuca.Position;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 public class Stage {
@@ -20,10 +21,10 @@ public class Stage {
 
     public void init(){
         rectangle = new Rectangle(PADDING, PADDING, getWidth(), getHeight());
-        rectangle.draw();
+        rectangle.fill();
     }
 
-    public int getColumn(){
+    public int getCol(){
         return column;
     }
 
@@ -45,10 +46,6 @@ public class Stage {
 
     public int getY(){
         return rectangle.getY();
-    }
-
-    public int getCellSize(){
-        return CELL_SIZE;
     }
 
     public Position makePosition(int col, int row){

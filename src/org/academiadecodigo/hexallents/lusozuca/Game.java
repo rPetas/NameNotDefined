@@ -2,6 +2,7 @@ package org.academiadecodigo.hexallents.lusozuca;
 
 import org.academiadecodigo.hexallents.lusozuca.characters.Enemy;
 import org.academiadecodigo.hexallents.lusozuca.characters.Player;
+import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
 
 public class Game {
 
@@ -23,7 +24,7 @@ public class Game {
         platforms = new Platform[3];
 
 
-        platforms[0] = new Platform(0, 40);
+        //platforms[0] = new Platform(0, 40);
 
     }
 
