@@ -35,7 +35,8 @@ public class Game {
         //Platform platform1 = new Platform(100, 0, stage, 20);
         //platforms.makePlatform(1);
 
-        player= new Player(stage.makePosition(200,80));
+        player= new Player(stage.makePosition(10,80));
+
     }
 
 

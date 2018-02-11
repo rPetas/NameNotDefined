@@ -18,7 +18,7 @@ public class Position {
         this.col = col;
         this.row = row;
         this.stage = stage;
-        rectangle = new Rectangle();
+        rectangle = new Rectangle(stage.colToPixel(getCol()), stage.rowToPixel(getRow()), stage.CELL_SIZE, stage.CELL_SIZE);
         this.color = StageBackground.NOCOLOR;
         show();
     }
