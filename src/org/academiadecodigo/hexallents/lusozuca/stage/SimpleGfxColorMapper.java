@@ -12,7 +12,7 @@ public class SimpleGfxColorMapper {
             Color.WHITE
     };
 
-    public static Color getColor(StageColor color){
+    public static Color getColor(StageBackground color){
 
         Color sGfxColor = null;
 

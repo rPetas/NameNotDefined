@@ -2,7 +2,7 @@ package org.academiadecodigo.hexallents.lusozuca;
 
 import org.academiadecodigo.hexallents.lusozuca.stage.SimpleGfxColorMapper;
 import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
-import org.academiadecodigo.hexallents.lusozuca.stage.StageColor;
+import org.academiadecodigo.hexallents.lusozuca.stage.StageBackground;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 public class Position {
@@ -11,7 +11,7 @@ public class Position {
     private Stage stage;
     private int col;
     private int row;
-    private StageColor color;
+    private StageBackground color;
 
 
     public Position(int col, int row, Stage stage) {
@@ -19,7 +19,7 @@ public class Position {
         this.row = row;
         this.stage = stage;
         rectangle = new Rectangle();
-        this.color = StageColor.NOCOLOR;
+        this.color = StageBackground.NOCOLOR;
         show();
     }
 
@@ -50,12 +50,12 @@ public class Position {
         return row;
     }
 
-    public StageColor getColor() {
+    public StageBackground getColor() {
         return color;
 
     }
 
-    public void setColor(StageColor color) {
+    public void setColor(StageBackground color) {
         rectangle.setColor(SimpleGfxColorMapper.getColor(color));
         this.color = color;
         show();

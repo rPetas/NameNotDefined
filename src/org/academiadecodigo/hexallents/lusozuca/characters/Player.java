@@ -3,7 +3,7 @@ import org.academiadecodigo.hexallents.lusozuca.CollisionDetector;
 import org.academiadecodigo.hexallents.lusozuca.Direction;
 import org.academiadecodigo.hexallents.lusozuca.Position;
 import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
-import org.academiadecodigo.hexallents.lusozuca.stage.StageColor;
+import org.academiadecodigo.hexallents.lusozuca.stage.StageBackground;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
@@ -22,7 +22,7 @@ public class Player implements KeyboardHandler {
     public Player(Position startingPosition){
 
         this.pos = startingPosition;
-        pos.setColor(StageColor.BLUE);
+        pos.setColor(StageBackground.BLUE);
 
         Keyboard k = new Keyboard(this);
         KeyboardEvent up = new KeyboardEvent();

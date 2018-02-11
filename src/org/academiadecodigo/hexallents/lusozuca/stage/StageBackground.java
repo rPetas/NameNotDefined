@@ -3,7 +3,7 @@ package org.academiadecodigo.hexallents.lusozuca.stage;
 /**
  * Created by codecadet on 11/02/2018.
  */
-public enum StageColor {
+public enum StageBackground {
 
     RED,
     GREEN,
