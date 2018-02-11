@@ -10,6 +10,7 @@ public class Game {
     private Stage stage;
     private Player player;
     private Platform[] platforms;
+    private Stair[] stairs;
     //private Platform platforms;
     private Enemy[] enemies;
     private int delay;
@@ -28,8 +29,12 @@ public class Game {
         platforms[1] = new Platform(6 * Platform.BLOCK_SIZE, 6 * Platform.BLOCK_SIZE, stage, 14);
         platforms[2] = new Platform(0, 3 * Platform.BLOCK_SIZE, stage, 14);
         platforms[3] = new Platform(6 * Platform.BLOCK_SIZE, 0, stage, 14);
-        //Platform platform1 = new Platform(100, 0, stage, 20);
-        //platforms.makePlatform(1);
+
+        stairs = new Stair[3];
+        stairs[0] = new Stair(12 * Platform.BLOCK_SIZE, 6 * Platform.BLOCK_SIZE, stage, 3);
+        stairs[1] = new Stair(7 * Platform.BLOCK_SIZE, 3 * Platform.BLOCK_SIZE, stage, 3);
+        stairs[2] = new Stair(12 * Platform.BLOCK_SIZE, 0, stage, 3);
+
     }
 
 

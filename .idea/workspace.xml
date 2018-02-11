@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e61eb0c8-ad2f-427e-a2cf-b6a9788ce4dd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/academiadecodigo/hexallents/lusozuca/Game.java" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/hexallents/lusozuca/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/academiadecodigo/hexallents/lusozuca/Main.java" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/hexallents/lusozuca/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/academiadecodigo/hexallents/lusozuca/Platform.java" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/hexallents/lusozuca/Platform.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/academiadecodigo/hexallents/lusozuca/Position.java" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/hexallents/lusozuca/Position.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/academiadecodigo/hexallents/lusozuca/stage/Stage.java" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/hexallents/lusozuca/stage/Stage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/academiadecodigo/hexallents/lusozuca/Stair.java" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/hexallents/lusozuca/Stair.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,9 +21,21 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/hexallents/lusozuca/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="29" column="62" lean-forward="false" selection-start-line="29" selection-start-column="62" selection-end-line="29" selection-end-column="62" />
+            <state relative-caret-position="465">
+              <caret line="34" column="56" lean-forward="false" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Stair.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/hexallents/lusozuca/Stair.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,14 +97,23 @@
       <file leaf-file-name="Platform.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/hexallents/lusozuca/Platform.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="70" lean-forward="true" selection-start-line="4" selection-start-column="70" selection-end-line="4" selection-end-column="70" />
-              <folding />
+            <state relative-caret-position="405">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -114,6 +131,7 @@
         <option value="$PROJECT_DIR$/src/org/academiadecodigo/hexallents/lusozuca/stage/Stage.java" />
         <option value="$PROJECT_DIR$/src/org/academiadecodigo/hexallents/lusozuca/Main.java" />
         <option value="$PROJECT_DIR$/src/org/academiadecodigo/hexallents/lusozuca/Platform.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/hexallents/lusozuca/Stair.java" />
         <option value="$PROJECT_DIR$/src/org/academiadecodigo/hexallents/lusozuca/Game.java" />
       </list>
     </option>
@@ -318,12 +336,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1518368363773</updated>
-      <workItem from="1518368366965" duration="14286000" />
+      <workItem from="1518368366965" duration="15219000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14286000" />
+    <option name="totallyTimeSpent" value="15219000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="5" y="23" width="1855" height="1039" extended-state="0" />
@@ -427,14 +445,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/hexallents/lusozuca/Platform.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="70" lean-forward="true" selection-start-line="4" selection-start-column="70" selection-end-line="4" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/hexallents/lusozuca/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -443,10 +453,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/hexallents/lusozuca/Platform.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/hexallents/lusozuca/Stair.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/hexallents/lusozuca/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="29" column="62" lean-forward="false" selection-start-line="29" selection-start-column="62" selection-end-line="29" selection-end-column="62" />
+        <state relative-caret-position="465">
+          <caret line="34" column="56" lean-forward="false" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
           <folding />
         </state>
       </provider>
