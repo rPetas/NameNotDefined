@@ -39,7 +39,7 @@ public class Stage {
     public int getHeight(){
         return row*CELL_SIZE;
     }
-
+git
     public int getX(){
         return rectangle.getX();
     }
