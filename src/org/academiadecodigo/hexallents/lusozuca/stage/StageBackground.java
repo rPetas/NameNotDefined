@@ -5,12 +5,11 @@ package org.academiadecodigo.hexallents.lusozuca.stage;
  */
 public enum StageBackground {
 
-    BLACK,
-    WHITE,
-    BLUE,
     RED,
     GREEN,
+    BLUE,
     MAGENTA,
-    NOCOLOR
-
+    WHITE,
+    NOCOLOR,
+    BLACK
 }
