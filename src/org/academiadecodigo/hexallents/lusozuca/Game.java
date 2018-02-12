@@ -36,7 +36,7 @@ public class Game {
         stairs[2] = new Stair(12 * Platform.BLOCK_SIZE, 0, stage, 3);
 
 
-        player= new Player(stage.makePosition(10,80));
+        player= new Player(stage.makePosition(10,5*Platform.BLOCK_SIZE));
 
     }
 

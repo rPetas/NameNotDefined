@@ -18,12 +18,15 @@ public class Platform {
 
 
     public Platform(int col, int row, Stage stage, int numberOfBlocks){
-        pos = new Position(col, row, stage);
-        rectangle = new Rectangle(stage.colToPixel(col), stage.rowToPixel(row), Stage.CELL_SIZE * BLOCK_SIZE * numberOfBlocks, Stage.CELL_SIZE * BLOCK_SIZE);
-        rectangle.setColor(SimpleGfxColorMapper.getColor(StageBackground.MAGENTA));
-        rectangle.fill();
+        color=StageBackground.MAGENTA;
+        pos = new Position(col, row, stage, numberOfBlocks,color);
+
+        //pos.setColor(StageBackground.MAGENTA);
+        //rectangle = new Rectangle(stage.colToPixel(col), stage.rowToPixel(row), Stage.CELL_SIZE * BLOCK_SIZE * numberOfBlocks, Stage.CELL_SIZE * BLOCK_SIZE);
+        //rectangle.setColor(SimpleGfxColorMapper.getColor(StageBackground.MAGENTA));
+        //rectangle.fill();
         //makePlatform(1);
-        pos.show();
+        //pos.show();
     }
 
 

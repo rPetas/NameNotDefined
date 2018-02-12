@@ -14,7 +14,7 @@ public class Position {
     private int row;
     private StageBackground color;
 
-
+    //Player
     public Position(int col, int row, Stage stage) {
         this.col = col;
         this.row = row;
@@ -23,6 +23,25 @@ public class Position {
         this.color = StageBackground.NOCOLOR;
         show();
     }
+
+    //Platform
+    public Position(int col, int row, Stage stage, int numberOfBlocks, StageBackground color) {
+        rectangle = new Rectangle(stage.colToPixel(col), stage.rowToPixel(row), Stage.CELL_SIZE * Platform.BLOCK_SIZE * numberOfBlocks, Stage.CELL_SIZE * Platform.BLOCK_SIZE);
+        this.color = color;
+        show();
+    }
+    //Stairs
+    public Position(int col, int row, Stage stage, int numberOfBlocks) {
+        rectangle = new Rectangle(stage.colToPixel(col), stage.rowToPixel(row), Stage.CELL_SIZE * Platform.BLOCK_SIZE, Stage.CELL_SIZE * Platform.BLOCK_SIZE * numberOfBlocks);
+        this.color = StageBackground.GREEN;
+        rectangle.fill();
+        show();
+    }
+
+
+
+
+
 
     public void show() {
         rectangle.setColor(SimpleGfxColorMapper.getColor(getColor()));

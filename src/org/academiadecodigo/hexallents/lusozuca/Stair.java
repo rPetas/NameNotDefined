@@ -15,11 +15,7 @@ public class Stair {
 
 
     public Stair(int col, int row, Stage stage, int numberOfBlocks){
-        pos = new Position(col, row, stage);
-        rectangle = new Rectangle(stage.colToPixel(col), stage.rowToPixel(row), Stage.CELL_SIZE * BLOCK_SIZE, Stage.CELL_SIZE * BLOCK_SIZE * numberOfBlocks);
-        rectangle.setColor(SimpleGfxColorMapper.getColor(StageBackground.GREEN));
-        rectangle.fill();
-        pos.show();
+        pos = new Position(col, row, stage, numberOfBlocks);
     }
 
 
