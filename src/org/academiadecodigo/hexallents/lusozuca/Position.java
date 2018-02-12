@@ -1,6 +1,5 @@
 package org.academiadecodigo.hexallents.lusozuca;
 
-import javafx.geometry.Pos;
 import org.academiadecodigo.hexallents.lusozuca.stage.SimpleGfxColorMapper;
 import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
 import org.academiadecodigo.hexallents.lusozuca.stage.StageBackground;
@@ -19,8 +18,8 @@ public class Position {
         this.col = col;
         this.row = row;
         this.stage = stage;
-        rectangle = new Rectangle();
-        this.color = StageBackground.BLACK;
+        rectangle = new Rectangle(stage.colToPixel(getCol()), stage.rowToPixel(getRow()), stage.CELL_SIZE, stage.CELL_SIZE);
+        this.color = StageBackground.NOCOLOR;
         show();
     }
 
