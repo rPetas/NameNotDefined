@@ -12,6 +12,10 @@ public class PlatformPosition extends Position {
     public PlatformPosition(int col, int row, Stage stage, int numberOfBlocks) {
         rectangle = new Rectangle(stage.colToPixel(col), stage.rowToPixel(row), Stage.CELL_SIZE * Platform.BLOCK_SIZE * numberOfBlocks, Stage.CELL_SIZE * Platform.BLOCK_SIZE);
         color = StageBackground.MAGENTA;
+        minX = rectangle.getX();
+        maxX = rectangle.getX()+rectangle.getWidth();
+        minY = rectangle.getY();
+        maxY = rectangle.getY()+rectangle.getHeight();
         show();
     }
 

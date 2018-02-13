@@ -14,6 +14,10 @@ public class PlayerPosition extends Position {
         this.row = row;
         this.stage = stage;
         rectangle = new Rectangle(stage.colToPixel(getCol()), stage.rowToPixel(getRow()), stage.CELL_SIZE, stage.CELL_SIZE);
+        minX = rectangle.getX();
+        maxX = rectangle.getX()+rectangle.getWidth();
+        minY = rectangle.getY();
+        maxY = rectangle.getY()+rectangle.getHeight();
         this.color = StageBackground.NOCOLOR;
         show();
     }
@@ -111,7 +115,7 @@ public class PlayerPosition extends Position {
 
     public void moveDown(int distance) {
         int maxRowsDown = distance > getStage().getRow() - (getRow() + 1) ? getStage().getRow() - (getRow() + 1) : distance;
-        setPos(getCol(), getRow() - maxRowsDown);
+        setPos(getCol(), getRow() + maxRowsDown);
     }
 
 
