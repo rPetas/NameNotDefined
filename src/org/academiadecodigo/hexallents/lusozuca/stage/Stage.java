@@ -1,7 +1,6 @@
 package org.academiadecodigo.hexallents.lusozuca.stage;
 
-import javafx.geometry.Pos;
-import org.academiadecodigo.hexallents.lusozuca.Position;
+import org.academiadecodigo.hexallents.lusozuca.position.PlayerPosition;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 public class Stage {
@@ -57,8 +56,8 @@ public class Stage {
         return row * CELL_SIZE + PADDING;
     }
 
-    public Position makePosition(int col, int row){
-        return new Position(col, row, this);
+    public PlayerPosition makePosition(int col, int row){
+        return new PlayerPosition(col, row, this);
     }
 
 }

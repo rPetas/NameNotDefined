@@ -1,7 +1,7 @@
 package org.academiadecodigo.hexallents.lusozuca.characters;
 import org.academiadecodigo.hexallents.lusozuca.CollisionDetector;
 import org.academiadecodigo.hexallents.lusozuca.Direction;
-import org.academiadecodigo.hexallents.lusozuca.Position;
+import org.academiadecodigo.hexallents.lusozuca.position.PlayerPosition;
 import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
 import org.academiadecodigo.hexallents.lusozuca.stage.StageBackground;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
@@ -10,7 +10,7 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 
 public class Player implements KeyboardHandler {
-    private Position pos;
+    private PlayerPosition pos;
     private Stage stage;
     private boolean gravity = false; // when it's true, activates the pullDown method, so he falls
     private boolean dead = false; // game stops and only thing u can do to continue is restart or rewind;
@@ -19,9 +19,9 @@ public class Player implements KeyboardHandler {
     protected CollisionDetector collisionDetector;
     protected Direction currentDirection;
 
-    public Player(Position startingPosition){
+    public Player(PlayerPosition startingPlayerPosition){
 
-        this.pos = startingPosition;
+        this.pos = startingPlayerPosition;
         pos.setColor(StageBackground.BLUE);
 
         Keyboard k = new Keyboard(this);
@@ -94,7 +94,7 @@ public class Player implements KeyboardHandler {
 
 
 
-    public Position getPos(){
+    public PlayerPosition getPos(){
         return pos;
     }
 

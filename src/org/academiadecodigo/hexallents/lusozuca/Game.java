@@ -9,9 +9,8 @@ public class Game {
 
     private Stage stage;
     private Player player;
-    private Platform[] platforms;
     private Stair[] stairs;
-    //private Platform platforms;
+    private Platform[] platforms;
     private Enemy[] enemies;
     private int delay;
     private CollisionDetector collisionDetector;

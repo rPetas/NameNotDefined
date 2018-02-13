@@ -1,21 +1,15 @@
-package org.academiadecodigo.hexallents.lusozuca;
+package org.academiadecodigo.hexallents.lusozuca.position;
 
-import javafx.geometry.Pos;
+import org.academiadecodigo.hexallents.lusozuca.Direction;
 import org.academiadecodigo.hexallents.lusozuca.stage.SimpleGfxColorMapper;
 import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
 import org.academiadecodigo.hexallents.lusozuca.stage.StageBackground;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
-public class Position {
-
-    private Rectangle rectangle;
-    private Stage stage;
-    private int col;
-    private int row;
-    private StageBackground color;
+public class PlayerPosition extends Position {
 
     //Player
-    public Position(int col, int row, Stage stage) {
+    public PlayerPosition(int col, int row, Stage stage) {
         this.col = col;
         this.row = row;
         this.stage = stage;
@@ -24,19 +18,20 @@ public class Position {
         show();
     }
 
-    //Platform
-    public Position(int col, int row, Stage stage, int numberOfBlocks, StageBackground color) {
+/*    //Platform
+    public PlayerPosition(int col, int row, Stage stage, int numberOfBlocks, StageBackground color) {
         rectangle = new Rectangle(stage.colToPixel(col), stage.rowToPixel(row), Stage.CELL_SIZE * Platform.BLOCK_SIZE * numberOfBlocks, Stage.CELL_SIZE * Platform.BLOCK_SIZE);
         this.color = color;
         show();
     }
     //Stairs
-    public Position(int col, int row, Stage stage, int numberOfBlocks) {
+    public PlayerPosition(int col, int row, Stage stage, int numberOfBlocks) {
         rectangle = new Rectangle(stage.colToPixel(col), stage.rowToPixel(row), Stage.CELL_SIZE * Platform.BLOCK_SIZE, Stage.CELL_SIZE * Platform.BLOCK_SIZE * numberOfBlocks);
         this.color = StageBackground.GREEN;
         rectangle.fill();
         show();
     }
+    */
 
 
 
@@ -134,8 +129,8 @@ public class Position {
 
     @Override
     public boolean equals(Object position) {
-        if(position instanceof Position){
-            Position pos= (Position) position;
+        if(position instanceof PlayerPosition){
+            PlayerPosition pos= (PlayerPosition) position;
             return col == pos.getCol() && row == pos.getRow();
         }
         return false;
