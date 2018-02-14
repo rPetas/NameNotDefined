@@ -1,4 +1,4 @@
-package org.academiadecodigo.hexallents.lusozuca;
+package org.academiadecodigo.hexallents.lusozuca.GameObjects;
 
 import org.academiadecodigo.hexallents.lusozuca.position.PlatformPosition;
 import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
@@ -6,7 +6,7 @@ import org.academiadecodigo.hexallents.lusozuca.stage.StageBackground;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 
-public class Platform {
+public class Platform extends GameObjects{
 
     private Rectangle rectangle;
     private PlatformPosition pos;

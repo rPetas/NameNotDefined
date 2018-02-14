@@ -12,16 +12,15 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 public class Player implements KeyboardHandler {
     private PlayerPosition pos;
     private Stage stage;
+    private CollisionDetector collisionDetector;
     private boolean gravity = false; // when it's true, activates the pullDown method, so he falls
     private boolean dead = false; // game stops and only thing u can do to continue is restart or rewind;
 
-    // Allow direct access from subclasses
-    protected CollisionDetector collisionDetector;
-    protected Direction currentDirection;
 
     public Player(PlayerPosition startingPlayerPosition){
 
         this.pos = startingPlayerPosition;
+
         pos.setColor(StageBackground.BLUE);
 
         Keyboard k = new Keyboard(this);

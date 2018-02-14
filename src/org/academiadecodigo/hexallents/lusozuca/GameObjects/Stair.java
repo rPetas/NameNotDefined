@@ -1,11 +1,11 @@
-package org.academiadecodigo.hexallents.lusozuca;
+package org.academiadecodigo.hexallents.lusozuca.GameObjects;
 
 import org.academiadecodigo.hexallents.lusozuca.position.StairPosition;
 import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
 import org.academiadecodigo.hexallents.lusozuca.stage.StageBackground;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
-public class Stair {
+public class Stair extends GameObjects{
 
     private Rectangle rectangle;
     private StairPosition pos;
