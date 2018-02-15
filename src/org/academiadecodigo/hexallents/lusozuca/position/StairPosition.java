@@ -12,6 +12,10 @@ public class StairPosition extends Position {
 
         rectangle = new Rectangle(stage.colToPixel(col), stage.rowToPixel(row), Stage.CELL_SIZE * Platform.BLOCK_SIZE, Stage.CELL_SIZE * Platform.BLOCK_SIZE * numberOfBlocks);
         color = StageBackground.GREEN;
+        minX = rectangle.getX();
+        maxX = rectangle.getX()+rectangle.getWidth();
+        minY = rectangle.getY();
+        maxY = rectangle.getY()+rectangle.getHeight();
         show();
     }
 

@@ -13,6 +13,10 @@ public abstract class Position {
     protected int col;
     protected int row;
     protected StageBackground color;
+    protected int minX;
+    protected int maxX;
+    protected int minY;
+    protected int maxY;
 
     abstract void show();
 
@@ -50,12 +54,15 @@ public abstract class Position {
     }
 
 
-
+    // this method equals is verifying if the rectangles are not overlapping;
+    // if it returns true it means that there is no collision;
+    // it is counter-intuitive;
     @Override
     public boolean equals(Object position) {
-        if(position instanceof PlayerPosition){
-            PlayerPosition pos = (PlayerPosition) position;
-            return col == pos.getCol() && row == pos.getRow();
+        if(position instanceof Position){
+            Position pos = (Position) position;
+            return this.minX < pos.maxX && this.maxX > pos.minX &&
+                    this.minY < pos.maxY && this.maxY > pos.minY;
         }
         return false;
     }

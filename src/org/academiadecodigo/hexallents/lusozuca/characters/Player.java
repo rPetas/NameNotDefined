@@ -28,18 +28,23 @@ public class Player implements KeyboardHandler {
         KeyboardEvent up = new KeyboardEvent();
         up.setKey(KeyboardEvent.KEY_UP);
         up.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+
         KeyboardEvent down = new KeyboardEvent();
         down.setKey(KeyboardEvent.KEY_DOWN);
         down.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+
         KeyboardEvent left = new KeyboardEvent();
         left.setKey(KeyboardEvent.KEY_LEFT);
         left.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+
         KeyboardEvent right = new KeyboardEvent();
         right.setKey(KeyboardEvent.KEY_RIGHT);
         right.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+
         KeyboardEvent jump = new KeyboardEvent();
         jump.setKey(KeyboardEvent.KEY_SPACE);
         jump.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+
         k.addEventListener(up);
         k.addEventListener(down);
         k.addEventListener(left);
@@ -50,7 +55,7 @@ public class Player implements KeyboardHandler {
 
     @Override
     public void keyPressed(KeyboardEvent e){
-        if(!isDead()&&!isGravity()){
+        //if(!isDead()&&!isGravity()){
 
             switch (e.getKey()) {
                 case KeyboardEvent.KEY_LEFT:
@@ -59,14 +64,20 @@ public class Player implements KeyboardHandler {
                 case KeyboardEvent.KEY_RIGHT:
                     getPos().moveDirection(Direction.RIGHT, 1);
                     break;
+                case KeyboardEvent.KEY_UP:
+                    getPos().moveDirection(Direction.UP,1);
+                    break;
+                case KeyboardEvent.KEY_DOWN:
+                    getPos().moveDirection(Direction.DOWN,1);
+                    break;
                 case  KeyboardEvent.KEY_SPACE:
                     getPos().moveDirection(Direction.UP, 3);
                     gravity=true;
-            }
+           // }
 
 
         }
-        if (!isDead()&& isGravity()){
+       /* if (!isDead()&& isGravity()){
             switch (e.getKey()){
                 case KeyboardEvent.KEY_LEFT:
                     getPos().moveDirection(Direction.LEFT,1);
@@ -77,7 +88,7 @@ public class Player implements KeyboardHandler {
                     break;
 
             }
-        }
+        }*/
     }
 
     @Override
