@@ -13,7 +13,7 @@ public class PlayerPosition extends Position {
         this.col = col;
         this.row = row;
         this.stage = stage;
-        rectangle = new Rectangle(stage.colToPixel(getCol()), stage.rowToPixel(getRow()), stage.CELL_SIZE, stage.CELL_SIZE);
+        rectangle = new Rectangle(stage.colToPixel(getCol()), stage.rowToPixel(getRow()), 2*stage.CELL_SIZE, 2*stage.CELL_SIZE);
         minX = rectangle.getX();
         maxX = rectangle.getX()+rectangle.getWidth();
         minY = rectangle.getY();

@@ -23,19 +23,20 @@ public class Game {
 
     public void init() {
         stage.init();
-        platforms = new Platform[4];
-        platforms[0] = new Platform(0, stage.getRow() - Platform.BLOCK_SIZE, stage, 14);    //stage.getRow() - Platform.BLOCK_SIZE = quantidade de linhas do Stage - tamanho do bloco em linhas (não em pixels)
-        platforms[1] = new Platform(6 * Platform.BLOCK_SIZE, 6 * Platform.BLOCK_SIZE, stage, 14);
-        platforms[2] = new Platform(0, 3 * Platform.BLOCK_SIZE, stage, 14);
-        platforms[3] = new Platform(6 * Platform.BLOCK_SIZE, 0, stage, 14);
+        platforms = new Platform[5];
+        platforms[0] = new Platform(0, stage.getRow() - Platform.BLOCK_SIZE, stage, 26);    //stage.getRow() - Platform.BLOCK_SIZE = quantidade de linhas do Stage - tamanho do bloco em linhas (não em pixels)
+        platforms[1] = new Platform(14 * Platform.BLOCK_SIZE, 15 * Platform.BLOCK_SIZE, stage, 26);
+        platforms[2] = new Platform(0, 11 * Platform.BLOCK_SIZE, stage, 26);
+        platforms[3] = new Platform(14 * Platform.BLOCK_SIZE, 7 * Platform.BLOCK_SIZE, stage, 26);
+        platforms[4] = new Platform(0, 3 * Platform.BLOCK_SIZE, stage, 26);
 
         stairs = new Stair[3];
-        stairs[0] = new Stair(12 * Platform.BLOCK_SIZE, 6 * Platform.BLOCK_SIZE, stage, 3);
-        stairs[1] = new Stair(7 * Platform.BLOCK_SIZE, 3 * Platform.BLOCK_SIZE, stage, 3);
-        stairs[2] = new Stair(12 * Platform.BLOCK_SIZE, 0, stage, 3);
+        stairs[0] = new Stair(23 * Platform.BLOCK_SIZE, 15 * Platform.BLOCK_SIZE, stage, 4);
+        stairs[1] = new Stair(16 * Platform.BLOCK_SIZE, 11 * Platform.BLOCK_SIZE, stage, 4);
+        stairs[2] = new Stair(23 * Platform.BLOCK_SIZE, 0, stage, 4);
 
 
-        player= new Player(stage.makePosition(10,5*Platform.BLOCK_SIZE));
+        player= new Player(stage.makePosition(10,5 * Platform.BLOCK_SIZE));
 
     }
 
