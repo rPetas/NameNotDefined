@@ -54,7 +54,7 @@ public abstract class Position {
     @Override
     public boolean equals(Object position) {
         if(position instanceof PlayerPosition){
-            PlayerPosition pos= (PlayerPosition) position;
+            PlayerPosition pos = (PlayerPosition) position;
             return col == pos.getCol() && row == pos.getRow();
         }
         return false;
