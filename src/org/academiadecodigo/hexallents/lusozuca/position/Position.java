@@ -107,12 +107,6 @@ public abstract class Position {
 
 
 
-
-    // this method equals is verifying if the rectangles are not overlapping;
-    // if it returns true it means that there is no collision;
-    // it is counter-intuitive;
-
-
     @Override
     public boolean equals(Object position) {
         if(position instanceof Position){
@@ -124,14 +118,7 @@ public abstract class Position {
             int vectorBX = (pos.minX + pos.maxX)/2;
             int vectorBY = (pos.minY + pos.maxY)/2;
 
-
-            //System.out.println(vectorBX);
-            //System.out.println(vectorBY);
-
-            //System.out.println("player: " + vectorAX + "    " + "objects: "  + vectorBX);
-            //System.out.println(this.rectangle.getWidth() + "   " + pos.rectangle.getWidth());
-
-            if((Math.abs(vectorAX - vectorBX) < (this.rectangle.getWidth()/2) + (pos.rectangle.getWidth()/2))&&
+           if((Math.abs(vectorAX - vectorBX) < (this.rectangle.getWidth()/2) + (pos.rectangle.getWidth()/2))&&
                 (Math.abs(vectorAY - vectorBY) < (this.rectangle.getHeight()/2) + (pos.rectangle.getHeight()/2))) {
                 return true;
             }
