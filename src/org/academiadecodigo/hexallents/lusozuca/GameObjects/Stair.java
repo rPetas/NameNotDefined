@@ -1,11 +1,12 @@
-package org.academiadecodigo.hexallents.lusozuca;
+package org.academiadecodigo.hexallents.lusozuca.GameObjects;
 
+import org.academiadecodigo.hexallents.lusozuca.position.Position;
 import org.academiadecodigo.hexallents.lusozuca.position.StairPosition;
 import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
 import org.academiadecodigo.hexallents.lusozuca.stage.StageBackground;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
-public class Stair {
+public class Stair extends GameObject {
 
     private Rectangle rectangle;
     private StairPosition pos;
@@ -16,6 +17,11 @@ public class Stair {
 
     public Stair(int col, int row, Stage stage, int numberOfBlocks){
         pos = new StairPosition(col, row, stage, numberOfBlocks);
+    }
+
+    @Override
+    public Position getPos(){
+        return pos;
     }
 
 
