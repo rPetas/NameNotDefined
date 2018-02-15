@@ -2,6 +2,7 @@ package org.academiadecodigo.hexallents.lusozuca.characters;
 import org.academiadecodigo.hexallents.lusozuca.CollisionDetector;
 import org.academiadecodigo.hexallents.lusozuca.Direction;
 import org.academiadecodigo.hexallents.lusozuca.position.PlayerPosition;
+import org.academiadecodigo.hexallents.lusozuca.position.Position;
 import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
 import org.academiadecodigo.hexallents.lusozuca.stage.StageBackground;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
@@ -10,7 +11,7 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 
 public class Player implements KeyboardHandler {
-    private PlayerPosition pos;
+    private Position pos;
     private Stage stage;
     private CollisionDetector collisionDetector;
     private boolean gravity = false; // when it's true, activates the pullDown method, so he falls
@@ -56,6 +57,8 @@ public class Player implements KeyboardHandler {
     public void keyPressed(KeyboardEvent e){
         //if(!isDead()&&!isGravity()){
 
+        if(!collisionDetector.checkForCollisions()){
+
             switch (e.getKey()) {
                 case KeyboardEvent.KEY_LEFT:
                     getPos().moveDirection(Direction.LEFT, 1);
@@ -64,14 +67,15 @@ public class Player implements KeyboardHandler {
                     getPos().moveDirection(Direction.RIGHT, 1);
                     break;
                 case KeyboardEvent.KEY_UP:
-                    getPos().moveDirection(Direction.UP,1);
+                    getPos().moveDirection(Direction.UP, 1);
                     break;
                 case KeyboardEvent.KEY_DOWN:
-                    getPos().moveDirection(Direction.DOWN,1);
+                    getPos().moveDirection(Direction.DOWN, 1);
                     break;
-                case  KeyboardEvent.KEY_SPACE:
+                case KeyboardEvent.KEY_SPACE:
                     getPos().moveDirection(Direction.UP, 3);
-                    gravity=true;
+                    gravity = true;
+            }
            // }
 
 
@@ -104,7 +108,7 @@ public class Player implements KeyboardHandler {
 
 
 
-    public PlayerPosition getPos(){
+    public Position getPos(){
         return pos;
     }
 

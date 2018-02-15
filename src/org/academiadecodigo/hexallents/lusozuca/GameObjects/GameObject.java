@@ -5,11 +5,7 @@ import org.academiadecodigo.hexallents.lusozuca.position.Position;
 /**
  * Created by codecadet on 14/02/2018.
  */
-public abstract class GameObjects {
+public abstract class GameObject {
 
-    private Position pos;
-
-    public Position getPos(){
-        return pos;
-    }
+    public abstract Position getPos();
 }

@@ -20,7 +20,7 @@ public class StairPosition extends Position {
     }
 
     @Override
-    void show() {
+    public void show() {
         rectangle.setColor(SimpleGfxColorMapper.getColor(getColor()));
         rectangle.fill();
     }

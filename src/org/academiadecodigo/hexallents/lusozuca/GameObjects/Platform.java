@@ -1,15 +1,14 @@
 package org.academiadecodigo.hexallents.lusozuca.GameObjects;
 
 import org.academiadecodigo.hexallents.lusozuca.position.PlatformPosition;
+import org.academiadecodigo.hexallents.lusozuca.position.Position;
 import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
 import org.academiadecodigo.hexallents.lusozuca.stage.StageBackground;
-import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 
-public class Platform extends GameObjects{
+public class Platform extends GameObject {
 
-    private Rectangle rectangle;
-    private PlatformPosition pos;
+    private Position pos;
     private Stage stage;
     private StageBackground color;
     public static final int BLOCK_SIZE = 5;   //5 colunas ou linhas
@@ -26,6 +25,11 @@ public class Platform extends GameObjects{
         //rectangle.fill();
         //makePlatform(1);
         //pos.show();
+    }
+
+    @Override
+    public Position getPos(){
+        return pos;
     }
 
 
