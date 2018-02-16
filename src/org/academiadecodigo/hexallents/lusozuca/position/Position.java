@@ -105,6 +105,9 @@ public abstract class Position {
         setPos(getCol() + maxRowsRight, getRow());
     }
 
+    public Rectangle getRectangle(){
+        return rectangle;
+    }
 
 
     @Override

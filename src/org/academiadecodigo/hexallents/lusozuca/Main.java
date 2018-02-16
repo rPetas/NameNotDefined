@@ -5,10 +5,16 @@ public class Main {
         System.out.println("Hello World");
 
 
-        Game g = new Game(100, 50, 200);
+        Game g = new Game(100, 50, 1000);
         //antigo: colunas 192 e linhas 108
         g.init();
-        //g.start();
+
+        try {
+            g.start();
+        }catch (InterruptedException ex){
+            System.out.println("some exception");
+            ex.printStackTrace();
+        }
 
     }
 }

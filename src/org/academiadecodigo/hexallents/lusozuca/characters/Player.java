@@ -10,6 +10,8 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 
+import java.awt.*;
+
 public class Player implements KeyboardHandler {
     private Position pos;
     private Stage stage;
@@ -92,6 +94,16 @@ public class Player implements KeyboardHandler {
 
             }
         }*/
+    }
+
+    public void gravityPull(){
+
+        Position compare = pos;
+        compare.moveDirection(Direction.DOWN,1);
+
+        if(!collisionDetector.isOnPlatform(compare)){
+            //getPos().moveDirection(Direction.DOWN,1);
+        }
     }
 
     @Override

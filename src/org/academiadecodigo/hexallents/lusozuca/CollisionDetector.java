@@ -1,14 +1,16 @@
 package org.academiadecodigo.hexallents.lusozuca;
 
 import org.academiadecodigo.hexallents.lusozuca.GameObjects.GameObject;
+import org.academiadecodigo.hexallents.lusozuca.GameObjects.Platform;
 import org.academiadecodigo.hexallents.lusozuca.characters.Player;
+import org.academiadecodigo.hexallents.lusozuca.position.Position;
 
-import java.util.Arrays;
 
 public class CollisionDetector {
 
     private GameObject[] gameObjects;
     private Player player;
+
 
     public CollisionDetector(GameObject[] gameObjects, Player player){
 
@@ -26,9 +28,23 @@ public class CollisionDetector {
                 return true;
             }
         }
-
-        System.out.println("at least does this");
         return false;
     }
+
+    public boolean isOnPlatform(Position position){
+
+        for (GameObject obj: gameObjects){
+
+            if(obj instanceof Platform) {
+
+                if (position.equals(obj.getPos())) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+
 
 }
