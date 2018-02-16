@@ -59,8 +59,6 @@ public class Player implements KeyboardHandler {
     public void keyPressed(KeyboardEvent e){
         //if(!isDead()&&!isGravity()){
 
-        if(!collisionDetector.checkForCollisions()){
-
             switch (e.getKey()) {
                 case KeyboardEvent.KEY_LEFT:
                     getPos().moveDirection(Direction.LEFT, 1);
@@ -94,16 +92,17 @@ public class Player implements KeyboardHandler {
 
             }
         }*/
-    }
 
-    public void gravityPull(){
 
-        Position compare = pos;
-        compare.moveDirection(Direction.DOWN,1);
+    public void gravityPull(int delay) throws InterruptedException {
 
-        if(!collisionDetector.isOnPlatform(compare)){
-            //getPos().moveDirection(Direction.DOWN,1);
+        while (!collisionDetector.checkForCollisions()) {
+
+            Thread.sleep(delay);
+
+            getPos().moveDirection(Direction.DOWN, 1);
         }
+
     }
 
     @Override

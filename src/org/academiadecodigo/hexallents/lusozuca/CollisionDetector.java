@@ -24,7 +24,6 @@ public class CollisionDetector {
         for (GameObject obj: gameObjects){
 
             if(player.getPos().equals(obj.getPos())){
-                System.out.println(obj.toString());
                 return true;
             }
         }

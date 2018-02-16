@@ -61,9 +61,10 @@ public class Game {
 
         while(true){
 
-            Thread.sleep(delay);
+            System.out.println(player.getPos().getCol() + " | " + player.getPos().getRow());
 
-            player.gravityPull();
+            player.gravityPull(delay);
+
         }
     }
 
