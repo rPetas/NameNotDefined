@@ -64,11 +64,15 @@ public class Game {
 
     public void start() throws InterruptedException {
 
-        while(true){
-
-            Thread.sleep(delay);
+        while(!player.isDead()){
 
             collisionDetector.gravityPull();
+
+            if (player.isJumping()) {
+                collisionDetector.manageJump();
+            }
+
+            Thread.sleep(delay);
 
         }
     }
