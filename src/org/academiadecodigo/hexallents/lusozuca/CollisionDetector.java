@@ -30,18 +30,13 @@ public class CollisionDetector {
         return false;
     }
 
-    public boolean isOnPlatform(Position position){
+    public void gravityPull() throws InterruptedException {
 
-        for (GameObject obj: gameObjects){
+        if (!checkForCollisions()) {
 
-            if(obj instanceof Platform) {
-
-                if (position.equals(obj.getPos())) {
-                    return true;
-                }
-            }
+            player.getPos().moveDirection(Direction.DOWN, 1);
         }
-        return false;
+
     }
 
 

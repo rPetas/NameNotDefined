@@ -94,16 +94,6 @@ public class Player implements KeyboardHandler {
         }*/
 
 
-    public void gravityPull(int delay) throws InterruptedException {
-
-        while (!collisionDetector.checkForCollisions()) {
-
-            Thread.sleep(delay);
-
-            getPos().moveDirection(Direction.DOWN, 1);
-        }
-
-    }
 
     @Override
     public void keyReleased(KeyboardEvent e) {

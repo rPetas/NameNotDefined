@@ -61,9 +61,9 @@ public class Game {
 
         while(true){
 
-            System.out.println(player.getPos().getCol() + " | " + player.getPos().getRow());
+            Thread.sleep(delay);
 
-            player.gravityPull(delay);
+            collisionDetector.gravityPull();
 
         }
     }
