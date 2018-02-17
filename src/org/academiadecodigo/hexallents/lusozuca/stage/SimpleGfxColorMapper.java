@@ -9,7 +9,9 @@ public class SimpleGfxColorMapper {
             Color.GREEN,
             Color.BLUE,
             Color.MAGENTA,
-            Color.WHITE
+            Color.WHITE,
+            Color.BLACK,
+            Color.CYAN
     };
 
     public static Color getColor(StageBackground color){
@@ -31,6 +33,9 @@ public class SimpleGfxColorMapper {
                 break;
             case NOCOLOR:
                 sGfxColor = colors[4];
+                break;
+            case CYAN:
+                sGfxColor = colors[5];
                 break;
             default:
                 System.out.println("something went terribly wrong...");

@@ -6,7 +6,7 @@ import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 public class Stage {
 
     public static final int PADDING = 10;
-    public static final int CELL_SIZE = 10;
+    public static final int CELL_SIZE = 5;
     private Rectangle rectangle;
     private int column;
     private int row;

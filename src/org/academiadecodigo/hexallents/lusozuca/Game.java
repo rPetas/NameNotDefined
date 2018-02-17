@@ -28,19 +28,24 @@ public class Game {
     public void init() {
         stage.init();
 
-        gameObjects = new GameObject[7];
+        gameObjects = new GameObject[10];
+        //Platform
+        gameObjects[0] = new Platform(0, stage.getRow() - Platform.BLOCK_SIZE, stage, 26);    //stage.getRow() - Platform.BLOCK_SIZE = quantidade de linhas do Stage - tamanho do bloco em linhas (não em pixels)
+        gameObjects[1] = new Platform(14 * Platform.BLOCK_SIZE, 15 * Platform.BLOCK_SIZE, stage, 26);
+        gameObjects[2] = new Platform(0, 11 * Platform.BLOCK_SIZE, stage, 26);
+        gameObjects[3] = new Platform(14 * Platform.BLOCK_SIZE, 7 * Platform.BLOCK_SIZE, stage, 26);
+        gameObjects[4] = new Platform(0, 3 * Platform.BLOCK_SIZE, stage, 26);
 
-        gameObjects[0] = new Platform(0, stage.getRow() - Platform.BLOCK_SIZE, stage, 14);
-        gameObjects[1] = new Platform(6 * Platform.BLOCK_SIZE, 6 * Platform.BLOCK_SIZE, stage, 14);
-        gameObjects[2] = new Platform(0, 3 * Platform.BLOCK_SIZE, stage, 14);
-        gameObjects[3] = new Platform(6 * Platform.BLOCK_SIZE, 0, stage, 14);
+        //Stairs
+        gameObjects[5] = new Stair(23 * Platform.BLOCK_SIZE, 15 * Platform.BLOCK_SIZE, stage, 4);
+        gameObjects[6] = new Stair(16 * Platform.BLOCK_SIZE, 11 * Platform.BLOCK_SIZE, stage, 4);
+        gameObjects[7] = new Stair(23 * Platform.BLOCK_SIZE, 7 * Platform.BLOCK_SIZE, stage, 4);
+        gameObjects[8] = new Stair(16 * Platform.BLOCK_SIZE, 3 * Platform.BLOCK_SIZE, stage, 4);
+        gameObjects[9] = new Stair(23 * Platform.BLOCK_SIZE, -1 * Platform.BLOCK_SIZE, stage, 4);
 
-        gameObjects[4] = new Stair(12 * Platform.BLOCK_SIZE, 6 * Platform.BLOCK_SIZE, stage, 3);
-        gameObjects[5] = new Stair(7 * Platform.BLOCK_SIZE, 3 * Platform.BLOCK_SIZE, stage, 3);
-        gameObjects[6] = new Stair(12 * Platform.BLOCK_SIZE, 0, stage, 3);
 
-        /*//Criação das plataformas: imagens
-        Picture picPlatform1 = new Picture(Stage.PADDING, stage.rowToPixel(stage.getRow() - Platform.BLOCK_SIZE), "cloud.png");
+        //Criação das plataformas: imagens
+       /* Picture picPlatform1 = new Picture(Stage.PADDING, stage.rowToPixel(stage.getRow() - Platform.BLOCK_SIZE), "/Users/codecadet/Desktop/java/NameNotDefined/src/org/academiadecodigo/hexallents/lusozuca/images/cloud.png");
         picPlatform1.draw();
         Picture picPlatform2 = new Picture(stage.colToPixel(6 * Platform.BLOCK_SIZE), stage.rowToPixel(6 * Platform.BLOCK_SIZE), "/Users/codecadet/Desktop/java/NameNotDefined/src/org/academiadecodigo/hexallents/lusozuca/images/platform.png");
         picPlatform2.draw();

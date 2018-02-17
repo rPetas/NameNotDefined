@@ -1,6 +1,5 @@
 package org.academiadecodigo.hexallents.lusozuca.position;
 
-import javafx.geometry.Pos;
 import org.academiadecodigo.hexallents.lusozuca.Direction;
 import org.academiadecodigo.hexallents.lusozuca.stage.SimpleGfxColorMapper;
 import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
