@@ -55,7 +55,7 @@ public class Game {
         Picture picPlatform4 = new Picture(stage.colToPixel(6 * Platform.BLOCK_SIZE), stage.rowToPixel(0), "/Users/codecadet/Desktop/java/NameNotDefined/src/org/academiadecodigo/hexallents/lusozuca/images/platform.png");
         picPlatform4.draw();*/
 
-        player= new Player(stage.makePosition(10,5*Platform.BLOCK_SIZE));
+        player= new Player(stage.makePosition(10,80));
 
         collisionDetector = new CollisionDetector(gameObjects, player);
 

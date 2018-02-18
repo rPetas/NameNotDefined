@@ -3,7 +3,7 @@ package org.academiadecodigo.hexallents.lusozuca.characters;
 import org.academiadecodigo.hexallents.lusozuca.CollisionDetector;
 import org.academiadecodigo.hexallents.lusozuca.Direction;
 import org.academiadecodigo.hexallents.lusozuca.Sound;
-import org.academiadecodigo.hexallents.lusozuca.position.PlayerPosition;
+import org.academiadecodigo.hexallents.lusozuca.position.CharacterPosition;
 import org.academiadecodigo.hexallents.lusozuca.position.Position;
 import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
 import org.academiadecodigo.hexallents.lusozuca.stage.StageBackground;
@@ -13,7 +13,7 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 
 public class Player implements KeyboardHandler {
-    private Position pos;
+    private CharacterPosition pos;
     private Stage stage;
     private CollisionDetector collisionDetector;
     private boolean jump;
@@ -22,9 +22,9 @@ public class Player implements KeyboardHandler {
     private Sound jumpSound;
 
 
-    public Player(PlayerPosition startingPlayerPosition) {
+    public Player(CharacterPosition startingCharacterPosition) {
 
-        this.pos = startingPlayerPosition;
+        this.pos = startingCharacterPosition;
 
         pos.setColor(StageBackground.BLUE);
 
@@ -66,10 +66,10 @@ public class Player implements KeyboardHandler {
 
         switch (e.getKey()) {
             case KeyboardEvent.KEY_LEFT:
-                getPos().moveDirection(Direction.LEFT, 1);
+                pos.moveDirection(Direction.LEFT, 1);
                 break;
             case KeyboardEvent.KEY_RIGHT:
-                getPos().moveDirection(Direction.RIGHT, 1);
+                pos.moveDirection(Direction.RIGHT, 1);
                 break;
         }
 
@@ -82,11 +82,11 @@ public class Player implements KeyboardHandler {
 
             switch (e.getKey()) {
                 case KeyboardEvent.KEY_UP:
-                    getPos().moveDirection(Direction.UP, 1);
+                    pos.moveDirection(Direction.UP, 1);
                     break;
                 case KeyboardEvent.KEY_DOWN:
                     if(!collisionDetector.onPlatform()) {
-                        getPos().moveDirection(Direction.DOWN, 1);
+                        pos.moveDirection(Direction.DOWN, 1);
                         break;
                     }
             }
@@ -100,7 +100,7 @@ public class Player implements KeyboardHandler {
     @Override
     public void keyReleased(KeyboardEvent e) {
     }
-    public Position getPos() {
+    public CharacterPosition getPos() {
         return pos;
     }
 
