@@ -8,12 +8,12 @@ public class Main {
         Game g = new Game(200, 100, 50);
         g.init();
 
-        try {
+        /*try {
             g.start();
         }catch (InterruptedException ex){
             System.out.println("some exception");
             ex.printStackTrace();
-        }
+        }*/
 
     }
 }
