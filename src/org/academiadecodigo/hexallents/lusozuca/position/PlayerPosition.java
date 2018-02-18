@@ -5,15 +5,18 @@ import org.academiadecodigo.hexallents.lusozuca.stage.SimpleGfxColorMapper;
 import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
 import org.academiadecodigo.hexallents.lusozuca.stage.StageBackground;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class PlayerPosition extends Position {
+
 
     //Player
     public PlayerPosition(int col, int row, Stage stage) {
         this.col = col;
         this.row = row;
         this.stage = stage;
-        rectangle = new Rectangle(stage.colToPixel(getCol()), stage.rowToPixel(getRow()), stage.CELL_SIZE*2, stage.CELL_SIZE*2);
+        rectangle = new Rectangle(stage.colToPixel(getCol()), stage.rowToPixel(getRow()), 23, 30);
+        this.representation = new Picture(rectangle.getX(), rectangle.getY(), "front01.png");
         minX = rectangle.getX();
         maxX = rectangle.getX()+rectangle.getWidth();
         minY = rectangle.getY();
@@ -25,6 +28,8 @@ public class PlayerPosition extends Position {
     public void show() {
         rectangle.setColor(SimpleGfxColorMapper.getColor(getColor()));
         rectangle.fill();
+        representation.draw();
+
     }
 
     public void hide() {

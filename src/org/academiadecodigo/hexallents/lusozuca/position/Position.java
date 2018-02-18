@@ -5,6 +5,7 @@ import org.academiadecodigo.hexallents.lusozuca.stage.SimpleGfxColorMapper;
 import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
 import org.academiadecodigo.hexallents.lusozuca.stage.StageBackground;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public abstract class Position {
 
@@ -18,6 +19,7 @@ public abstract class Position {
     protected int maxX;
     protected int minY;
     protected int maxY;
+    protected Picture representation;
 
 
     abstract void show();
@@ -76,6 +78,7 @@ public abstract class Position {
                 break;
         }
         rectangle.translate((getCol()-previousCol)*Stage.CELL_SIZE,(getRow()-previousRow)*Stage.CELL_SIZE);
+        representation.translate((getCol()-previousCol)*Stage.CELL_SIZE,(getRow()-previousRow)*Stage.CELL_SIZE);
         minX = rectangle.getX();
         maxX = rectangle.getX() + rectangle.getWidth();
         minY = rectangle.getY();

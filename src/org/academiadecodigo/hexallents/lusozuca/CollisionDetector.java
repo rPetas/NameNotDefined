@@ -56,7 +56,7 @@ public class CollisionDetector {
 
     public void manageJump(){
 
-        if(jumpCounter < 10) {
+        if(jumpCounter < 9) {
 
             jumpCounter++;
 
