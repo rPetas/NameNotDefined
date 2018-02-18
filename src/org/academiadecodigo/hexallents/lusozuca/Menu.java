@@ -1,3 +1,5 @@
+package org.academiadecodigo.hexallents.lusozuca;
+
 import org.academiadecodigo.hexallents.lusozuca.Game;
 import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
@@ -17,7 +19,8 @@ public class Menu implements KeyboardHandler{
 
     public Menu (Game game, Stage stage){
         this.game = game;
-        menuScreen = new Picture(stage.getX(), stage.getY(), "/resources/otherScreens/bg_game.png");
+        menuScreen = new Picture(0, 0, "bg_game.png");
+        menuScreen.draw();
         menuKeyboard = new Keyboard(this);
 
         KeyboardEvent start = new KeyboardEvent();
@@ -36,7 +39,12 @@ public class Menu implements KeyboardHandler{
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
         if (keyboardEvent.getKey()==KeyboardEvent.KEY_S){
+            System.out.println("try to delete");
+            menuScreen.delete();
+            System.out.println("deleted");
             try {
+                game.init();
+                System.out.println("initiated");
                 game.start();
             } catch (InterruptedException ex){
                 System.out.println("Something went wrong : MENU");

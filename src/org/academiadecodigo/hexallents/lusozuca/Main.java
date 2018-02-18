@@ -6,7 +6,8 @@ public class Main {
 
 
         Game g = new Game(200, 100, 50);
-        g.init();
+
+        //g.init();
 
         /*try {
             g.start();
