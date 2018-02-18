@@ -18,6 +18,7 @@ public class Game {
     private Enemy[] enemies;
     private int delay;
     private CollisionDetector collisionDetector;
+    private Sound gameMusic;
 
 
     public Game(int cols, int rows, int delay) {
@@ -63,6 +64,9 @@ public class Game {
     }
 
     public void start() throws InterruptedException {
+
+        gameMusic = new Sound("/resources/sounds/music.wav");
+        gameMusic.loopIndef();
 
         while(!player.isDead()){
 

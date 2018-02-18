@@ -2,6 +2,7 @@ package org.academiadecodigo.hexallents.lusozuca.characters;
 
 import org.academiadecodigo.hexallents.lusozuca.CollisionDetector;
 import org.academiadecodigo.hexallents.lusozuca.Direction;
+import org.academiadecodigo.hexallents.lusozuca.Sound;
 import org.academiadecodigo.hexallents.lusozuca.position.PlayerPosition;
 import org.academiadecodigo.hexallents.lusozuca.position.Position;
 import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
@@ -18,6 +19,7 @@ public class Player implements KeyboardHandler {
     private boolean jump;
     private boolean gravity = true; // when it's true, activates the pullDown method, so he falls
     private boolean dead = false; // game stops and only thing u can do to continue is restart or rewind;
+    private Sound jumpSound;
 
 
     public Player(PlayerPosition startingPlayerPosition) {
@@ -25,6 +27,8 @@ public class Player implements KeyboardHandler {
         this.pos = startingPlayerPosition;
 
         pos.setColor(StageBackground.BLUE);
+
+        jumpSound = new Sound("/resources/sounds/Mario-jump-sound-effect-free-download.wav");
 
         Keyboard k = new Keyboard(this);
         KeyboardEvent up = new KeyboardEvent();
@@ -71,6 +75,7 @@ public class Player implements KeyboardHandler {
 
         if (e.getKey() == KeyboardEvent.KEY_SPACE && !gravity && !collisionDetector.onStairs()) {
             jump=true;
+            jumpSound.play(true);
         }
 
         if (collisionDetector.onStairs()) {
