@@ -7,7 +7,6 @@ import org.academiadecodigo.hexallents.lusozuca.characters.Player;
 import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.hexallents.lusozuca.GameObjects.Platform;
-import org.academiadecodigo.hexallents.lusozuca.Menu;
 
 
 
@@ -20,18 +19,19 @@ public class Game {
     private int delay;
     private CollisionDetector collisionDetector;
     private Sound gameMusic;
-    private Menu gameMenu;
 
 
-    public Game(int cols, int rows, int delay) {
+    public Game(int cols, int rows, int delay) throws InterruptedException {
         stage = new Stage(cols, rows);
         this.delay = delay;
-        this.gameMenu = new Menu (this, stage);
+        Picture menuScreen = new Picture(stage.PADDING,stage.PADDING,"bg_game.png");
+        menuScreen.draw();
+        Thread.sleep(10000);
+        menuScreen.delete();
     }
 
     public void init() {
         stage.init();
-
 
         gameObjects = new GameObject[10];
         //Platform
@@ -68,8 +68,6 @@ public class Game {
     }
 
     public void start() throws InterruptedException {
-
-        System.out.println("started");
 
         gameMusic = new Sound("/resources/sounds/music.wav");
         gameMusic.loopIndef();
