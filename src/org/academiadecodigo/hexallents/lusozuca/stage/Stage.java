@@ -1,6 +1,7 @@
 package org.academiadecodigo.hexallents.lusozuca.stage;
 
 import org.academiadecodigo.hexallents.lusozuca.position.PlayerPosition;
+import org.academiadecodigo.hexallents.lusozuca.position.EnemyPosition;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 public class Stage {
@@ -58,6 +59,10 @@ public class Stage {
 
     public PlayerPosition makePosition(int col, int row){
         return new PlayerPosition(col, row, this);
+    }
+
+    public EnemyPosition makePositionEnemy(int col, int row){
+        return new EnemyPosition(col, row, this);
     }
 
 }

@@ -2,6 +2,8 @@ package org.academiadecodigo.hexallents.lusozuca.stage;
 
 import org.academiadecodigo.simplegraphics.graphics.Color;
 
+import java.util.Collections;
+
 public class SimpleGfxColorMapper {
 
     private static final Color colors[] = {
@@ -11,6 +13,7 @@ public class SimpleGfxColorMapper {
             Color.MAGENTA,
             Color.WHITE,
             Color.BLACK,
+            Color.LIGHT_GRAY,
             Color.CYAN
     };
 
@@ -34,8 +37,14 @@ public class SimpleGfxColorMapper {
             case NOCOLOR:
                 sGfxColor = colors[4];
                 break;
-            case CYAN:
+            case BLACK:
                 sGfxColor = colors[5];
+                break;
+            case LIGHT_GRAY:
+                sGfxColor = colors[6];
+                break;
+            case CYAN:
+                sGfxColor = colors[7];
                 break;
             default:
                 System.out.println("something went terribly wrong...");
