@@ -45,14 +45,17 @@ public class Game {
 
 
         //Criação das plataformas: imagens
-       /* Picture picPlatform1 = new Picture(Stage.PADDING, stage.rowToPixel(stage.getRow() - Platform.BLOCK_SIZE), "/Users/codecadet/Desktop/java/NameNotDefined/src/org/academiadecodigo/hexallents/lusozuca/images/cloud.png");
+        Picture picPlatform1 = new Picture(10, stage.rowToPixel(stage.getRow() - 20), "org/academiadecodigo/hexallents/lusozuca/images/first_step.png");
         picPlatform1.draw();
-        Picture picPlatform2 = new Picture(stage.colToPixel(6 * Platform.BLOCK_SIZE), stage.rowToPixel(6 * Platform.BLOCK_SIZE), "/Users/codecadet/Desktop/java/NameNotDefined/src/org/academiadecodigo/hexallents/lusozuca/images/platform.png");
+        Picture picPlatform2 = new Picture(314, stage.rowToPixel(stage.getRow() - 32), "org/academiadecodigo/hexallents/lusozuca/images/cloud.png");
         picPlatform2.draw();
-        Picture picPlatform3 = new Picture(Stage.PADDING, stage.rowToPixel(3 * Platform.BLOCK_SIZE), "/Users/codecadet/Desktop/java/NameNotDefined/src/org/academiadecodigo/hexallents/lusozuca/images/platform.png");
+        Picture picPlatform3 = new Picture(10, stage.rowToPixel(stage.getRow() - 53), "org/academiadecodigo/hexallents/lusozuca/images/cloud.png");
         picPlatform3.draw();
-        Picture picPlatform4 = new Picture(stage.colToPixel(6 * Platform.BLOCK_SIZE), stage.rowToPixel(0), "/Users/codecadet/Desktop/java/NameNotDefined/src/org/academiadecodigo/hexallents/lusozuca/images/platform.png");
-        picPlatform4.draw();*/
+        Picture picPlatform4 = new Picture(314, stage.rowToPixel(stage.getRow() - 72), "org/academiadecodigo/hexallents/lusozuca/images/cloud.png");
+        picPlatform4.draw();
+        Picture picPlatform5 = new Picture(10, stage.rowToPixel(stage.getRow() - 93), "org/academiadecodigo/hexallents/lusozuca/images/cloud.png");
+        picPlatform5.draw();
+
 
         player= new Player(stage.makePosition(10,5*Platform.BLOCK_SIZE));
 

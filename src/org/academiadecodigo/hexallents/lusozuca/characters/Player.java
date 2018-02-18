@@ -10,11 +10,13 @@ import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Player implements KeyboardHandler {
     private Position pos;
     private Stage stage;
     private CollisionDetector collisionDetector;
+    private Picture playerImage;
     private boolean jump;
     private boolean gravity = true; // when it's true, activates the pullDown method, so he falls
     private boolean dead = false; // game stops and only thing u can do to continue is restart or rewind;
@@ -24,7 +26,7 @@ public class Player implements KeyboardHandler {
 
         this.pos = startingPlayerPosition;
 
-        pos.setColor(StageBackground.BLUE);
+        pos.setColor(StageBackground.RED);
 
         Keyboard k = new Keyboard(this);
         KeyboardEvent up = new KeyboardEvent();
