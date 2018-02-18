@@ -9,8 +9,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class CharacterPosition extends Position {
 
-    private PlayerAnimations playerAnimations;
-
+    int frameCounter;
 
     //Player
     public CharacterPosition(int col, int row, Stage stage) {
@@ -19,7 +18,7 @@ public class CharacterPosition extends Position {
         this.stage = stage;
         rectangle = new Rectangle(stage.colToPixel(getCol()), stage.rowToPixel(getRow()), 23, 30);
         this.representation = new Picture(rectangle.getX(), rectangle.getY(), "front01.png");
-        this.playerAnimations = new PlayerAnimations(this);
+
         minX = rectangle.getX();
         maxX = rectangle.getX()+rectangle.getWidth();
         minY = rectangle.getY();
@@ -29,6 +28,13 @@ public class CharacterPosition extends Position {
     }
 
     public void moveDirection(Direction direction, int distance) {
+
+        if (frameCounter>3){
+            frameCounter=0;
+        }
+
+        PlayerAnimation animation = new PlayerAnimation(this);
+
 
         int previousCol= getCol();
         int previousRow= getRow();
@@ -42,9 +48,13 @@ public class CharacterPosition extends Position {
                 moveDown(distance);
                 break;
             case LEFT:
+                //representation.delete();
+                //representation= animation.animationLeft(frameCounter++);
                 moveLeft(distance);
                 break;
             case RIGHT:
+                //representation.delete();
+                //representation = animation.animationRight(frameCounter++);
                 moveRight(distance);
                 break;
         }
