@@ -21,9 +21,13 @@ public class Game {
     private Sound gameMusic;
 
 
-    public Game(int cols, int rows, int delay) {
+    public Game(int cols, int rows, int delay) throws InterruptedException {
         stage = new Stage(cols, rows);
         this.delay = delay;
+        Picture menuScreen = new Picture(stage.PADDING,stage.PADDING,"bg_game.png");
+        menuScreen.draw();
+        Thread.sleep(10000);
+        menuScreen.delete();
     }
 
     public void init() {

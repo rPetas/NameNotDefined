@@ -5,10 +5,12 @@ public class Main {
         System.out.println("Hello World");
 
 
-        Game g = new Game(200, 100, 50);
-        g.init();
+        //Game g = new Game(200, 100, 50);
+        //g.init();
 
         try {
+            Game g = new Game(200, 100, 50);
+            g.init();
             g.start();
         }catch (InterruptedException ex){
             System.out.println("some exception");
