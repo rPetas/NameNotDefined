@@ -6,7 +6,6 @@ public class Main {
 
 
         Game g = new Game(200, 100, 50);
-        //antigo: colunas 192 e linhas 108
         g.init();
 
         try {
