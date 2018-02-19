@@ -1,8 +1,12 @@
 package org.academiadecodigo.hexallents.lusozuca.stage;
 
-import org.academiadecodigo.hexallents.lusozuca.position.PlayerPosition;
+
 import org.academiadecodigo.hexallents.lusozuca.position.EnemyPosition;
+import org.academiadecodigo.hexallents.lusozuca.GameObjects.Platform;
+import org.academiadecodigo.hexallents.lusozuca.position.CharacterPosition;
+import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Stage {
 
@@ -19,10 +23,24 @@ public class Stage {
 
     }
 
+    // Defining a new rgb parameter to background color blue
+
+    Color color = new Color(44,219,255);
+
     //Creates canvas
     public void init(){
         rectangle = new Rectangle(PADDING, PADDING, getWidth(), getHeight());
+        //Background white will be replaced by background image
+        rectangle.setColor(color);
         rectangle.fill();
+        // Background image replacing white background
+        Picture backGroundPlatform = new Picture(Stage.PADDING, this.row - Platform.BLOCK_SIZE, "org/academiadecodigo/hexallents/lusozuca/images/back_ground.png");
+        backGroundPlatform.draw();
+
+
+
+
+
     }
 
     public int getCol(){
@@ -57,8 +75,8 @@ public class Stage {
         return row * CELL_SIZE + PADDING;
     }
 
-    public PlayerPosition makePosition(int col, int row){
-        return new PlayerPosition(col, row, this);
+    public CharacterPosition makePosition(int col, int row){
+        return new CharacterPosition(col, row, this);
     }
 
     public EnemyPosition makePositionEnemy(int col, int row){

@@ -1,5 +1,6 @@
 package org.academiadecodigo.hexallents.lusozuca.position;
 
+import org.academiadecodigo.hexallents.lusozuca.Direction;
 import org.academiadecodigo.hexallents.lusozuca.stage.SimpleGfxColorMapper;
 import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
 import org.academiadecodigo.hexallents.lusozuca.stage.StageBackground;
@@ -20,6 +21,58 @@ public class EnemyPosition extends Position {
         this.color = StageBackground.NOCOLOR;
         show();
     }
+
+    public void moveDirection(Direction direction, int distance) {
+
+        int previousCol= getCol();
+        int previousRow= getRow();
+
+        switch (direction) {
+
+            case UP:
+                moveUp(distance);
+                break;
+            case DOWN:
+                moveDown(distance);
+                break;
+            case LEFT:
+                moveLeft(distance);
+                break;
+            case RIGHT:
+                moveRight(distance);
+                break;
+        }
+        representation.translate((getCol()-previousCol)*Stage.CELL_SIZE,(getRow()-previousRow)*Stage.CELL_SIZE);
+        minX = representation.getX();
+        maxX = representation.getMaxX();
+        minY = representation.getY();
+        maxY = representation.getMaxY();
+    }
+
+    public void moveUp(int distance) {
+        int maxRowsUp = distance < getRow() ? distance : getRow();
+        setPos(getCol(), getRow() - maxRowsUp);
+    }
+
+
+    public void moveDown(int distance) {
+        int maxRowsDown = distance > getStage().getRow() - (getRow() + 1) ? getStage().getRow() - (getRow() + 1) : distance;
+        setPos(getCol(), getRow() + maxRowsDown);
+    }
+
+
+    public void moveLeft(int distance) {
+        int maxRowsLeft = distance < getCol() ? distance : getCol();
+        setPos(getCol() - maxRowsLeft, getRow());
+    }
+
+
+    public void moveRight(int distance) {
+        int maxRowsRight = distance > getStage().getCol() - (getCol() + 1) ? getStage().getCol() - (getCol() + 1) : distance;
+        setPos(getCol() + maxRowsRight, getRow());
+    }
+
+
 
     public void show() {
         rectangle.setColor(SimpleGfxColorMapper.getColor(getColor()));

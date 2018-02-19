@@ -7,7 +7,7 @@ import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
 import org.academiadecodigo.hexallents.lusozuca.stage.StageBackground;
 
 public class Enemy {
-    private Position pos;
+    private EnemyPosition pos;
     private Stage stage;
     private StageBackground color;
     private int moves = 0;
@@ -31,7 +31,7 @@ public class Enemy {
 
         //getPos().moveDirection(Direction.LEFT, (int) (Math.random() * 2));
 
-        getPos().moveDirection(Direction.RIGHT, (int) (Math.random() * 2));
+        pos.moveDirection(Direction.RIGHT, (int) (Math.random() * 2));
 
     }
 

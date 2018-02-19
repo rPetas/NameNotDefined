@@ -5,6 +5,7 @@ import org.academiadecodigo.hexallents.lusozuca.position.StairPosition;
 import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
 import org.academiadecodigo.hexallents.lusozuca.stage.StageBackground;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Stair extends GameObject {
 

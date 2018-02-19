@@ -1,7 +1,9 @@
 package org.academiadecodigo.hexallents.lusozuca.characters;
+
 import org.academiadecodigo.hexallents.lusozuca.CollisionDetector;
 import org.academiadecodigo.hexallents.lusozuca.Direction;
-import org.academiadecodigo.hexallents.lusozuca.position.PlayerPosition;
+import org.academiadecodigo.hexallents.lusozuca.Sound;
+import org.academiadecodigo.hexallents.lusozuca.position.CharacterPosition;
 import org.academiadecodigo.hexallents.lusozuca.position.Position;
 import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
 import org.academiadecodigo.hexallents.lusozuca.stage.StageBackground;
@@ -9,22 +11,26 @@ import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
-
-import java.awt.*;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Player implements KeyboardHandler {
-    private Position pos;
+    private CharacterPosition pos;
     private Stage stage;
     private CollisionDetector collisionDetector;
-    private boolean gravity = false; // when it's true, activates the pullDown method, so he falls
+    private Picture playerImage;
+    private boolean jump;
+    private boolean gravity = true; // when it's true, activates the pullDown method, so he falls
     private boolean dead = false; // game stops and only thing u can do to continue is restart or rewind;
+    private Sound jumpSound;
 
 
-    public Player(PlayerPosition startingPlayerPosition){
+    public Player(CharacterPosition startingCharacterPosition) {
 
-        this.pos = startingPlayerPosition;
+        this.pos = startingCharacterPosition;
 
-        pos.setColor(StageBackground.BLUE);
+        pos.setColor(StageBackground.RED);
+
+        jumpSound = new Sound("/resources/sounds/Mario-jump-sound-effect-free-download.wav");
 
         Keyboard k = new Keyboard(this);
         KeyboardEvent up = new KeyboardEvent();
@@ -55,73 +61,72 @@ public class Player implements KeyboardHandler {
 
     }
 
-    @Override
-    public void keyPressed(KeyboardEvent e){
+    @Override //Ainda está por resolver a situação de poder andar para a direita e para a esquerda
+    //dentro das plataformas.
+    public void keyPressed(KeyboardEvent e) {
         //if(!isDead()&&!isGravity()){
 
+        switch (e.getKey()) {
+            case KeyboardEvent.KEY_LEFT:
+                pos.moveDirection(Direction.LEFT, 1);
+                break;
+            case KeyboardEvent.KEY_RIGHT:
+                pos.moveDirection(Direction.RIGHT, 1);
+                break;
+        }
+
+        if (e.getKey() == KeyboardEvent.KEY_SPACE && !gravity && !collisionDetector.onStairs()) {
+            jump=true;
+            jumpSound.play(true);
+        }
+
+        if (collisionDetector.onStairs()) {
+
             switch (e.getKey()) {
-                case KeyboardEvent.KEY_LEFT:
-                    getPos().moveDirection(Direction.LEFT, 1);
-                    break;
-                case KeyboardEvent.KEY_RIGHT:
-                    getPos().moveDirection(Direction.RIGHT, 1);
-                    break;
                 case KeyboardEvent.KEY_UP:
-                    getPos().moveDirection(Direction.UP, 1);
+                    pos.moveDirection(Direction.UP, 1);
                     break;
                 case KeyboardEvent.KEY_DOWN:
-                    getPos().moveDirection(Direction.DOWN, 1);
-                    break;
-                case KeyboardEvent.KEY_SPACE:
-                    getPos().moveDirection(Direction.UP, 3);
-                    gravity = true;
+                    if(!collisionDetector.onPlatform()) {
+                        pos.moveDirection(Direction.DOWN, 1);
+                        break;
+                    }
             }
-           // }
-
-
         }
-       /* if (!isDead()&& isGravity()){
-            switch (e.getKey()){
-                case KeyboardEvent.KEY_LEFT:
-                    getPos().moveDirection(Direction.LEFT,1);
-                    break;
-
-                case KeyboardEvent.KEY_RIGHT:
-                    getPos().moveDirection(Direction.RIGHT,1);
-                    break;
-
-            }
-        }*/
-
-
-
-    @Override
-    public void keyReleased(KeyboardEvent e) {
     }
 
     public void setStage(Stage stage) {
         this.stage = stage;
     }
 
-    public void setCollisionDetector(CollisionDetector collisionDetector) {
-        this.collisionDetector = collisionDetector;
+    @Override
+    public void keyReleased(KeyboardEvent e) {
     }
-
-
-
-    public Position getPos(){
+    public CharacterPosition getPos() {
         return pos;
     }
 
-    public boolean isDead(){
+    public boolean isDead() {
         return dead;
     }
 
-    public void die(){
+    public void die() {
         dead = true;
     }
 
-    public boolean isGravity() {
-        return gravity;
+    public void setOffGravity() {
+        gravity = false;
+    }
+    public void setGravity() {
+        gravity = true;
+    }
+    public void setCollisionDetector(CollisionDetector collisionDetector) {
+        this.collisionDetector = collisionDetector;
+    }
+    public boolean isJumping(){
+        return jump;
+    }
+    public void setJumpOver(){
+        jump = false;
     }
 }
