@@ -32,7 +32,7 @@ public class Stage {
         rectangle.setColor(color);
         rectangle.fill();
         // Background image replacing white background
-        Picture backGroundPlatform = new Picture(Stage.PADDING, this.row - Platform.BLOCK_SIZE, "org/academiadecodigo/hexallents/lusozuca/images/back_ground.png");
+        Picture backGroundPlatform = new Picture(Stage.PADDING, this.row - Platform.BLOCK_SIZE, "resources/images/back_ground.png");
         backGroundPlatform.draw();
 
 

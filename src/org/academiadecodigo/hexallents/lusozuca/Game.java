@@ -51,15 +51,15 @@ public class Game {
 
 
         //Criação das plataformas: imagens
-        Picture picPlatform1 = new Picture(10, stage.rowToPixel(stage.getRow() - 20), "org/academiadecodigo/hexallents/lusozuca/images/first_step.png");
+        Picture picPlatform1 = new Picture(10, stage.rowToPixel(stage.getRow() - 20), "resources/images/first_step.png");
         picPlatform1.draw();
-        Picture picPlatform2 = new Picture(314, stage.rowToPixel(stage.getRow() - 32), "org/academiadecodigo/hexallents/lusozuca/images/cloud.png");
+        Picture picPlatform2 = new Picture(314, stage.rowToPixel(stage.getRow() - 32), "resources/images/cloud.png");
         picPlatform2.draw();
-        Picture picPlatform3 = new Picture(10, stage.rowToPixel(stage.getRow() - 53), "org/academiadecodigo/hexallents/lusozuca/images/cloud.png");
+        Picture picPlatform3 = new Picture(10, stage.rowToPixel(stage.getRow() - 53), "resources/images/cloud.png");
         picPlatform3.draw();
-        Picture picPlatform4 = new Picture(314, stage.rowToPixel(stage.getRow() - 72), "org/academiadecodigo/hexallents/lusozuca/images/cloud.png");
+        Picture picPlatform4 = new Picture(314, stage.rowToPixel(stage.getRow() - 72), "resources/images/cloud.png");
         picPlatform4.draw();
-        Picture picPlatform5 = new Picture(10, stage.rowToPixel(stage.getRow() - 93), "org/academiadecodigo/hexallents/lusozuca/images/cloud.png");
+        Picture picPlatform5 = new Picture(10, stage.rowToPixel(stage.getRow() - 93), "resources/images/cloud.png");
         picPlatform5.draw();
 
 

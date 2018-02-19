@@ -11,7 +11,7 @@ public class StairPosition extends Position {
 
     public StairPosition(int col, int row, Stage stage, int numberOfBlocks) {
 
-        Picture stairs = new Picture(stage.colToPixel(col), stage.rowToPixel(row), "org/academiadecodigo/hexallents/lusozuca/images/stair.png");
+        Picture stairs = new Picture(stage.colToPixel(col), stage.rowToPixel(row), "resources/images/stair.png");
         stairs.draw();
         rectangle = new Rectangle(stage.colToPixel(col), stage.rowToPixel(row), Stage.CELL_SIZE * Platform.BLOCK_SIZE, Stage.CELL_SIZE * Platform.BLOCK_SIZE * numberOfBlocks);
         color = StageBackground.GREEN;
