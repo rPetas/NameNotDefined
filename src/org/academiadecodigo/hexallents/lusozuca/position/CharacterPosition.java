@@ -17,7 +17,7 @@ public class CharacterPosition extends Position {
         this.row = row;
         this.stage = stage;
         rectangle = new Rectangle(stage.colToPixel(getCol()), stage.rowToPixel(getRow()), 23, 30);
-        this.representation = new Picture(rectangle.getX(), rectangle.getY(), "front01.png");
+        this.representation = new Picture(rectangle.getX(), rectangle.getY(), "org/academiadecodigo/hexallents/lusozuca/images/front01.png");
 
         minX = rectangle.getX();
         maxX = rectangle.getX()+rectangle.getWidth();

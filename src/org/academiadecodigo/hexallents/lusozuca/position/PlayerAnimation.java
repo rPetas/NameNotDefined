@@ -14,20 +14,20 @@ public class PlayerAnimation extends org.academiadecodigo.hexallents.lusozuca.po
         animationLeft = new Picture[4];
         animationRight = new Picture[4];
 
-        animationUpDown[0] = new Picture(characterPosition.representation.getX(), characterPosition.representation.getY(), "back01.png");
-        animationUpDown[1] = new Picture(characterPosition.representation.getX(), characterPosition.representation.getY(), "back02.png");
-        animationUpDown[2] = new Picture(characterPosition.representation.getX(), characterPosition.representation.getY(), "back03.png");
-        animationUpDown[3] = new Picture(characterPosition.representation.getX(), characterPosition.representation.getY(), "back04.png");
+        animationUpDown[0] = new Picture(characterPosition.representation.getX(), characterPosition.representation.getY(), "/resources/sansImages/back01.png");
+        animationUpDown[1] = new Picture(characterPosition.representation.getX(), characterPosition.representation.getY(), "/resources/sansImages/back02.png");
+        animationUpDown[2] = new Picture(characterPosition.representation.getX(), characterPosition.representation.getY(), "/resources/sansImages/back03.png");
+        animationUpDown[3] = new Picture(characterPosition.representation.getX(), characterPosition.representation.getY(), "/resources/sansImages/back04.png");
 
-        animationLeft[0] = new Picture(characterPosition.representation.getX(), characterPosition.representation.getY(), "left01.png");
-        animationLeft[1] = new Picture(characterPosition.representation.getX(), characterPosition.representation.getY(), "left02.png");
-        animationLeft[2] = new Picture(characterPosition.representation.getX(), characterPosition.representation.getY(), "left03.png");
-        animationLeft[3] = new Picture(characterPosition.representation.getX(), characterPosition.representation.getY(), "left04.png");
+        animationLeft[0] = new Picture(characterPosition.representation.getX(), characterPosition.representation.getY(), "/resources/sansImages/left01.png");
+        animationLeft[1] = new Picture(characterPosition.representation.getX(), characterPosition.representation.getY(), "/resources/sansImages/left02.png");
+        animationLeft[2] = new Picture(characterPosition.representation.getX(), characterPosition.representation.getY(), "/resources/sansImages/left03.png");
+        animationLeft[3] = new Picture(characterPosition.representation.getX(), characterPosition.representation.getY(), "/resources/sansImages/left04.png");
 
-        animationRight[0] = new Picture(characterPosition.representation.getX(), characterPosition.representation.getY(), "right01.png");
-        animationRight[1] = new Picture(characterPosition.representation.getX(), characterPosition.representation.getY(), "right02.png");
-        animationRight[2] = new Picture(characterPosition.representation.getX(), characterPosition.representation.getY(), "right03.png");
-        animationRight[3] = new Picture(characterPosition.representation.getX(), characterPosition.representation.getY(), "right04.png");
+        animationRight[0] = new Picture(characterPosition.representation.getX(), characterPosition.representation.getY(), "/resources/sansImages/right01.png");
+        animationRight[1] = new Picture(characterPosition.representation.getX(), characterPosition.representation.getY(), "/resources/sansImages/right02.png");
+        animationRight[2] = new Picture(characterPosition.representation.getX(), characterPosition.representation.getY(), "/resources/sansImages/right03.png");
+        animationRight[3] = new Picture(characterPosition.representation.getX(), characterPosition.representation.getY(), "/resources/sansImages/right04.png");
     }
 
     /*public Picture animationUpAndDown(int index) {

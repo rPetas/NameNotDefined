@@ -1,9 +1,7 @@
 package org.academiadecodigo.hexallents.lusozuca.stage;
 
 import org.academiadecodigo.hexallents.lusozuca.GameObjects.Platform;
-import org.academiadecodigo.hexallents.lusozuca.GameObjects.Stair;
 import org.academiadecodigo.hexallents.lusozuca.position.CharacterPosition;
-import org.academiadecodigo.hexallents.lusozuca.position.PlayerPosition;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;

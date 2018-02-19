@@ -26,7 +26,7 @@ public class Game {
         this.delay = delay;
         Picture menuScreen = new Picture(stage.PADDING,stage.PADDING,"/Users/codecadet/Desktop/Curso/guilherme/Projetos/NameNotDefined/resources/sansImages/bg_game.png");
         menuScreen.draw();
-        Thread.sleep(10000);
+        Thread.sleep(2000);
         menuScreen.delete();
     }
 
