@@ -5,6 +5,7 @@ import org.academiadecodigo.hexallents.lusozuca.GameObjects.Platform;
 import org.academiadecodigo.hexallents.lusozuca.GameObjects.Stair;
 import org.academiadecodigo.hexallents.lusozuca.characters.Player;
 import org.academiadecodigo.hexallents.lusozuca.position.Position;
+import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 
 public class CollisionDetector {
@@ -12,13 +13,14 @@ public class CollisionDetector {
     private GameObject[] gameObjects;
     private Player player;
     private int jumpCounter;
+    private EndGamePosition endGamePosition;
 
 
     public CollisionDetector(GameObject[] gameObjects, Player player){
 
         this.gameObjects = gameObjects;
         this.player = player;
-
+        endGamePosition = new EndGamePosition();
     }
 
 
@@ -69,9 +71,26 @@ public class CollisionDetector {
         player.setJumpOver();
     }
 
+    public boolean checkEnd(){
+        if (player.getPos().equals(endGamePosition)) {
+            return true;
+        }
+        return false;
+    }
+
     private class EndGamePosition extends Position{
 
         private EndGamePosition(){
+            rectangle = new Rectangle(585, 30, 10, 10);
+
+            minX = rectangle.getX();
+            maxX = rectangle.getX()+rectangle.getWidth();
+            minY = rectangle.getY();
+            maxY = rectangle.getY()+rectangle.getHeight();
+        }
+
+        @Override
+        public void show() {
 
         }
     }

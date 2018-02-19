@@ -22,7 +22,7 @@ public abstract class Position {
     protected Picture representation;
 
 
-    abstract void show();
+    public abstract void show();
 
     public void hide(){
         rectangle.delete();

@@ -19,6 +19,7 @@ public class Game {
     private int delay;
     private CollisionDetector collisionDetector;
     private Sound gameMusic;
+    private boolean gameOver;
 
 
     public Game(int cols, int rows, int delay) throws InterruptedException {
@@ -75,7 +76,7 @@ public class Game {
         gameMusic = new Sound("/resources/sounds/music.wav");
         gameMusic.loopIndef();
 
-        while(!player.isDead()){
+        while(!gameOver){
 
             collisionDetector.gravityPull();
 
@@ -83,9 +84,23 @@ public class Game {
                 collisionDetector.manageJump();
             }
 
-            Thread.sleep(delay);
+            if(collisionDetector.checkEnd()){
+                end();
+            }
 
+            Thread.sleep(delay);
         }
+        gameMusic.stop();
+        gameMusic.close();
+        Sound endMusic = new Sound("/resources/sounds/knockknock.wav");
+        endMusic.play(true);
+        Picture endScreen = new Picture(stage.getX(), stage.getY(), "resources/otherScreenz/final_screen_v2.png");
+        endScreen.draw();
+
+    }
+
+    public void end(){
+        gameOver=true;
     }
 
 
