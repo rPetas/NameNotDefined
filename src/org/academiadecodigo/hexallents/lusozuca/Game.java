@@ -35,7 +35,7 @@ public class Game {
 
         gameObjects = new GameObject[10];
         //Platform
-        gameObjects[0] = new Platform(0, stage.getRow() - Platform.BLOCK_SIZE, stage, 26);    //stage.getRow() - Platform.BLOCK_SIZE = quantidade de linhas do Stage - tamanho do bloco em linhas (não em pixels)
+        gameObjects[0] = new Platform(0, stage.getRow()-3, stage, 26);    //stage.getRow() - Platform.BLOCK_SIZE = quantidade de linhas do Stage - tamanho do bloco em linhas (não em pixels)
         gameObjects[1] = new Platform(14 * Platform.BLOCK_SIZE, 15 * Platform.BLOCK_SIZE, stage, 26);
         gameObjects[2] = new Platform(0, 11 * Platform.BLOCK_SIZE, stage, 26);
         gameObjects[3] = new Platform(14 * Platform.BLOCK_SIZE, 7 * Platform.BLOCK_SIZE, stage, 26);

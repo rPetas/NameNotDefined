@@ -4,6 +4,7 @@ import org.academiadecodigo.hexallents.lusozuca.GameObjects.GameObject;
 import org.academiadecodigo.hexallents.lusozuca.GameObjects.Platform;
 import org.academiadecodigo.hexallents.lusozuca.GameObjects.Stair;
 import org.academiadecodigo.hexallents.lusozuca.characters.Player;
+import org.academiadecodigo.hexallents.lusozuca.position.Position;
 
 
 public class CollisionDetector {
@@ -66,6 +67,13 @@ public class CollisionDetector {
         }
         jumpCounter = 0;
         player.setJumpOver();
+    }
+
+    private class EndGamePosition extends Position{
+
+        private EndGamePosition(){
+
+        }
     }
 
 
