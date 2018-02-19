@@ -24,7 +24,7 @@ public class Game {
     public Game(int cols, int rows, int delay) throws InterruptedException {
         stage = new Stage(cols, rows);
         this.delay = delay;
-        Picture menuScreen = new Picture(stage.PADDING,stage.PADDING,"/Users/codecadet/Desktop/Curso/guilherme/Projetos/NameNotDefined/resources/sansImages/bg_game.png");
+        Picture menuScreen = new Picture(stage.PADDING,stage.PADDING,"org/academiadecodigo/hexallents/lusozuca/images/bg_game.png");
         menuScreen.draw();
         Thread.sleep(5000);
         menuScreen.delete();

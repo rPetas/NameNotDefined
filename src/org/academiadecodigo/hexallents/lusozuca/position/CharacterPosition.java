@@ -48,13 +48,13 @@ public class CharacterPosition extends Position {
                 moveDown(distance);
                 break;
             case LEFT:
-                //representation.delete();
-                //representation= animation.animationLeft(frameCounter++);
+                representation.delete();
+                representation= animation.animationLeft(frameCounter++);
                 moveLeft(distance);
                 break;
             case RIGHT:
-                //representation.delete();
-                //representation = animation.animationRight(frameCounter++);
+                representation.delete();
+                representation = animation.animationRight(frameCounter++);
                 moveRight(distance);
                 break;
         }
