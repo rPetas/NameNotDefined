@@ -17,7 +17,6 @@ public class Player implements KeyboardHandler {
     private CharacterPosition pos;
     private Stage stage;
     private CollisionDetector collisionDetector;
-    private Picture playerImage;
     private boolean jump;
     private boolean gravity = true; // when it's true, activates the pullDown method, so he falls
     private boolean dead = false; // game stops and only thing u can do to continue is restart or rewind;
