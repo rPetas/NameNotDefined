@@ -18,11 +18,16 @@ public class Game {
     private Enemy[] enemies;
     private int delay;
     private CollisionDetector collisionDetector;
+    private Sound gameMusic;
 
 
-    public Game(int cols, int rows, int delay) {
+    public Game(int cols, int rows, int delay) throws InterruptedException {
         stage = new Stage(cols, rows);
         this.delay = delay;
+        Picture menuScreen = new Picture(stage.PADDING,stage.PADDING,"/Users/codecadet/Desktop/Curso/guilherme/Projetos/NameNotDefined/resources/sansImages/bg_game.png");
+        menuScreen.draw();
+        Thread.sleep(10000);
+        menuScreen.delete();
     }
 
     public void init() {
@@ -57,7 +62,7 @@ public class Game {
         picPlatform5.draw();
 
 
-        player= new Player(stage.makePosition(10,5*Platform.BLOCK_SIZE));
+        player= new Player(stage.makePosition(10,80));
 
         collisionDetector = new CollisionDetector(gameObjects, player);
 
@@ -66,6 +71,9 @@ public class Game {
     }
 
     public void start() throws InterruptedException {
+
+        gameMusic = new Sound("/resources/sounds/music.wav");
+        gameMusic.loopIndef();
 
         while(!player.isDead()){
 

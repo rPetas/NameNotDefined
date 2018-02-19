@@ -43,7 +43,7 @@ public class CollisionDetector {
 
     public void gravityPull(){
 
-        if (!onPlatform()&&!onStairs()) {
+        if (!onPlatform() && !onStairs()) {
 
             player.getPos().moveDirection(Direction.DOWN, 1);
 
@@ -56,7 +56,7 @@ public class CollisionDetector {
 
     public void manageJump(){
 
-        if(jumpCounter < 9) {
+        if(jumpCounter < 8) {
 
             jumpCounter++;
 

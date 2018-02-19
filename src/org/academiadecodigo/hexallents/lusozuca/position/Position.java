@@ -5,6 +5,7 @@ import org.academiadecodigo.hexallents.lusozuca.stage.SimpleGfxColorMapper;
 import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
 import org.academiadecodigo.hexallents.lusozuca.stage.StageBackground;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public abstract class Position {
 
@@ -18,6 +19,7 @@ public abstract class Position {
     protected int maxX;
     protected int minY;
     protected int maxY;
+    protected Picture representation;
 
 
     abstract void show();
@@ -55,55 +57,7 @@ public abstract class Position {
         show();
     }
 
-    public void moveDirection(Direction direction, int distance) {
 
-        int previousCol= getCol();
-        int previousRow= getRow();
-
-        switch (direction) {
-
-            case UP:
-                moveUp(distance);
-                break;
-            case DOWN:
-                moveDown(distance);
-                break;
-            case LEFT:
-                moveLeft(distance);
-                break;
-            case RIGHT:
-                moveRight(distance);
-                break;
-        }
-        rectangle.translate((getCol()-previousCol)*Stage.CELL_SIZE,(getRow()-previousRow)*Stage.CELL_SIZE);
-        minX = rectangle.getX();
-        maxX = rectangle.getX() + rectangle.getWidth();
-        minY = rectangle.getY();
-        maxY = rectangle.getY() + rectangle.getHeight();
-    }
-
-    public void moveUp(int distance) {
-        int maxRowsUp = distance < getRow() ? distance : getRow();
-        setPos(getCol(), getRow() - maxRowsUp);
-    }
-
-
-    public void moveDown(int distance) {
-        int maxRowsDown = distance > getStage().getRow() - (getRow() + 1) ? getStage().getRow() - (getRow() + 1) : distance;
-        setPos(getCol(), getRow() + maxRowsDown);
-    }
-
-
-    public void moveLeft(int distance) {
-        int maxRowsLeft = distance < getCol() ? distance : getCol();
-        setPos(getCol() - maxRowsLeft, getRow());
-    }
-
-
-    public void moveRight(int distance) {
-        int maxRowsRight = distance > getStage().getCol() - (getCol() + 1) ? getStage().getCol() - (getCol() + 1) : distance;
-        setPos(getCol() + maxRowsRight, getRow());
-    }
 
     public Rectangle getRectangle(){
         return rectangle;
@@ -121,8 +75,8 @@ public abstract class Position {
             int vectorBX = (pos.minX + pos.maxX)/2;
             int vectorBY = (pos.minY + pos.maxY)/2;
 
-           if((Math.abs(vectorAX - vectorBX) < (this.rectangle.getWidth()) + (pos.rectangle.getWidth()/2))&&
-                (Math.abs(vectorAY - vectorBY) < (this.rectangle.getHeight()) + (pos.rectangle.getHeight()/2))) {
+           if((Math.abs(vectorAX - vectorBX) < (this.representation.getWidth()/2) + (pos.rectangle.getWidth()/2))&&
+                (Math.abs(vectorAY - vectorBY) < (this.representation.getHeight()/2) + (pos.rectangle.getHeight()/2))) {
                 return true;
             }
 

@@ -2,6 +2,7 @@ package org.academiadecodigo.hexallents.lusozuca.stage;
 
 import org.academiadecodigo.hexallents.lusozuca.GameObjects.Platform;
 import org.academiadecodigo.hexallents.lusozuca.GameObjects.Stair;
+import org.academiadecodigo.hexallents.lusozuca.position.CharacterPosition;
 import org.academiadecodigo.hexallents.lusozuca.position.PlayerPosition;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
@@ -74,8 +75,8 @@ public class Stage {
         return row * CELL_SIZE + PADDING;
     }
 
-    public PlayerPosition makePosition(int col, int row){
-        return new PlayerPosition(col, row, this);
+    public CharacterPosition makePosition(int col, int row){
+        return new CharacterPosition(col, row, this);
     }
 
 }

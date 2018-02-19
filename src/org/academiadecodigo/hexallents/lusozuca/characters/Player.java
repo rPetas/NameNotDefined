@@ -2,7 +2,8 @@ package org.academiadecodigo.hexallents.lusozuca.characters;
 
 import org.academiadecodigo.hexallents.lusozuca.CollisionDetector;
 import org.academiadecodigo.hexallents.lusozuca.Direction;
-import org.academiadecodigo.hexallents.lusozuca.position.PlayerPosition;
+import org.academiadecodigo.hexallents.lusozuca.Sound;
+import org.academiadecodigo.hexallents.lusozuca.position.CharacterPosition;
 import org.academiadecodigo.hexallents.lusozuca.position.Position;
 import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
 import org.academiadecodigo.hexallents.lusozuca.stage.StageBackground;
@@ -13,20 +14,23 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Player implements KeyboardHandler {
-    private Position pos;
+    private CharacterPosition pos;
     private Stage stage;
     private CollisionDetector collisionDetector;
     private Picture playerImage;
     private boolean jump;
     private boolean gravity = true; // when it's true, activates the pullDown method, so he falls
     private boolean dead = false; // game stops and only thing u can do to continue is restart or rewind;
+    private Sound jumpSound;
 
 
-    public Player(PlayerPosition startingPlayerPosition) {
+    public Player(CharacterPosition startingCharacterPosition) {
 
-        this.pos = startingPlayerPosition;
+        this.pos = startingCharacterPosition;
 
         pos.setColor(StageBackground.RED);
+
+        jumpSound = new Sound("/resources/sounds/Mario-jump-sound-effect-free-download.wav");
 
         Keyboard k = new Keyboard(this);
         KeyboardEvent up = new KeyboardEvent();
@@ -64,26 +68,27 @@ public class Player implements KeyboardHandler {
 
         switch (e.getKey()) {
             case KeyboardEvent.KEY_LEFT:
-                getPos().moveDirection(Direction.LEFT, 1);
+                pos.moveDirection(Direction.LEFT, 1);
                 break;
             case KeyboardEvent.KEY_RIGHT:
-                getPos().moveDirection(Direction.RIGHT, 1);
+                pos.moveDirection(Direction.RIGHT, 1);
                 break;
         }
 
         if (e.getKey() == KeyboardEvent.KEY_SPACE && !gravity && !collisionDetector.onStairs()) {
             jump=true;
+            jumpSound.play(true);
         }
 
         if (collisionDetector.onStairs()) {
 
             switch (e.getKey()) {
                 case KeyboardEvent.KEY_UP:
-                    getPos().moveDirection(Direction.UP, 1);
+                    pos.moveDirection(Direction.UP, 1);
                     break;
                 case KeyboardEvent.KEY_DOWN:
                     if(!collisionDetector.onPlatform()) {
-                        getPos().moveDirection(Direction.DOWN, 1);
+                        pos.moveDirection(Direction.DOWN, 1);
                         break;
                     }
             }
@@ -97,7 +102,7 @@ public class Player implements KeyboardHandler {
     @Override
     public void keyReleased(KeyboardEvent e) {
     }
-    public Position getPos() {
+    public CharacterPosition getPos() {
         return pos;
     }
 
