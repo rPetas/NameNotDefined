@@ -9,7 +9,6 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.hexallents.lusozuca.GameObjects.Platform;
 
 
-
 public class Game {
 
     private Stage stage;
@@ -44,10 +43,12 @@ public class Game {
         gameObjects[9] = new Stair(23 * Platform.BLOCK_SIZE, -1 * Platform.BLOCK_SIZE, stage, 4);
 
         //Enemies
-        enemies = new Enemy[3];
-        enemies[0] = new Enemy(0, 15 * Platform.BLOCK_SIZE, stage);
-        enemies[1] = new Enemy(8, 10 * Platform.BLOCK_SIZE, stage);
-        enemies[2] = new Enemy(10, 15 * Platform.BLOCK_SIZE, stage);
+        enemies = new Enemy[5];
+        enemies[0] = new Enemy(8, 93, stage);
+        enemies[1] = new Enemy(176, 73, stage);
+        enemies[2] = new Enemy(8, 53, stage);
+        enemies[3] = new Enemy(176, 33, stage);
+        enemies[4] = new Enemy(8, 13, stage);
 
         //Criação das plataformas: imagens
        /* Picture picPlatform1 = new Picture(Stage.PADDING, stage.rowToPixel(stage.getRow() - Platform.BLOCK_SIZE), "/Users/codecadet/Desktop/java/NameNotDefined/src/org/academiadecodigo/hexallents/lusozuca/images/cloud.png");
@@ -60,7 +61,7 @@ public class Game {
         picPlatform4.draw();*/
 
 
-        player = new Player(stage.makePosition(10,5 * Platform.BLOCK_SIZE));
+        player = new Player(stage.makePosition(10, 5 * Platform.BLOCK_SIZE));
 
         collisionDetector = new CollisionDetector(gameObjects, player);
 
@@ -70,7 +71,7 @@ public class Game {
 
     public void start() throws InterruptedException {
 
-        while(true){
+        while (true) {
 
             Thread.sleep(delay);
 
@@ -83,9 +84,8 @@ public class Game {
 
     public void moveEnemies() {
 
-        for (Enemy e : enemies) {
+        for (Enemy e: enemies) {
             e.move();
-            //collisionDetector.check(c);
         }
 
     }

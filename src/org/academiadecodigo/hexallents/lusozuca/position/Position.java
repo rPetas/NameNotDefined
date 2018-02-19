@@ -75,6 +75,7 @@ public abstract class Position {
                 moveRight(distance);
                 break;
         }
+
         rectangle.translate((getCol()-previousCol)*Stage.CELL_SIZE,(getRow()-previousRow)*Stage.CELL_SIZE);
         minX = rectangle.getX();
         maxX = rectangle.getX() + rectangle.getWidth();

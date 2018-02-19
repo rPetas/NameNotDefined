@@ -1,50 +1,52 @@
 package org.academiadecodigo.hexallents.lusozuca.characters;
 
+import org.academiadecodigo.hexallents.lusozuca.Direction;
 import org.academiadecodigo.hexallents.lusozuca.position.EnemyPosition;
 import org.academiadecodigo.hexallents.lusozuca.position.Position;
 import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
 import org.academiadecodigo.hexallents.lusozuca.stage.StageBackground;
-import org.academiadecodigo.hexallents.lusozuca.stage.StageDirection;
 
 public class Enemy {
     private Position pos;
     private Stage stage;
     private StageBackground color;
     private int moves = 0;
-    protected StageDirection currentDirection;
-    private int directionChangeLevel = 8; // randomness of direction changes from 1 to 10
+    private Direction lastDirection;
 
 
     public Enemy(int col, int row, Stage stage) {
+        color = StageBackground.MAGENTA;
         pos = new EnemyPosition(col, row, stage);
-        color = StageBackground.LIGHT_GRAY;
 
     }
 
-    public StageDirection chooseDirection() {
+    public Position getPos(){
+        return pos;
+    }
 
-        // Let's move in the same direction by default
-        StageDirection newDirection = currentDirection;
 
-        // Sometimes, we want to change direction...
-        if (Math.random() > ((double) directionChangeLevel) / 10) {
-            newDirection = StageDirection.values()[(int) (Math.random() * StageDirection.values().length)];
+    public void move(){
 
-            // but we do not want to perform U turns..
-            if (newDirection.isOpposite(currentDirection)) {
-                return chooseDirection();
-            }
+
+
+        //getPos().moveDirection(Direction.LEFT, (int) (Math.random() * 2));
+
+        getPos().moveDirection(Direction.RIGHT, (int) (Math.random() * 2));
+
+    }
+
+    /*private Direction generateNextDirection() {
+        Direction nextDir;
+        if (Math.random() > 0.2) {
+
+            nextDir = getRandomDirection();
+            lastDirection = nextDir;
+        } else {
+            nextDir = lastDirection;
         }
 
-        return newDirection;
-
-    }
-
-
-    public void move() {
-        moves++;
-
-    }
+        return nextDir;
+    }*/
 
 
 }
