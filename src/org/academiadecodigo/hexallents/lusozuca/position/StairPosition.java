@@ -9,17 +9,16 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class StairPosition extends Position {
 
-    public StairPosition(int col, int row, Stage stage, int numberOfBlocks) {
+    public StairPosition(int col, int row, int numberOfBlocks) {
 
-        Picture stairs = new Picture(stage.colToPixel(col), stage.rowToPixel(row), "resources/images/stair.png");
+        Picture stairs = new Picture(Stage.colToPixel(col), Stage.rowToPixel(row), "resources/images/stair.png");
         stairs.draw();
-        rectangle = new Rectangle(stage.colToPixel(col), stage.rowToPixel(row), Stage.CELL_SIZE * Platform.BLOCK_SIZE, Stage.CELL_SIZE * Platform.BLOCK_SIZE * numberOfBlocks);
+        rectangle = new Rectangle(Stage.colToPixel(col), Stage.rowToPixel(row), Stage.CELL_SIZE * Platform.BLOCK_SIZE, Stage.CELL_SIZE * Platform.BLOCK_SIZE * numberOfBlocks);
         color = StageBackground.GREEN;
         minX = rectangle.getX();
-        maxX = rectangle.getX()+rectangle.getWidth();
+        maxX = rectangle.getX() + rectangle.getWidth();
         minY = rectangle.getY();
-        maxY = rectangle.getY()+rectangle.getHeight();
-
+        maxY = rectangle.getY() + rectangle.getHeight();
 
     }
 

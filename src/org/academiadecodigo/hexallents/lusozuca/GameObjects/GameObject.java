@@ -7,5 +7,19 @@ import org.academiadecodigo.hexallents.lusozuca.position.Position;
  */
 public abstract class GameObject {
 
-    public abstract Position getPos();
+    protected Position pos;
+
+    public GameObject(Position pos) {
+        this.pos = pos;
+    }
+
+    public Position getPos() {
+        return pos;
+    }
+
+    public static enum Type {
+        STAIR,
+        PLATFORM,
+        CHARACTER
+    }
 }

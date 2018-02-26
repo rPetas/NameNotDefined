@@ -8,7 +8,6 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
  */
 public class Animation {
 
-    protected Picture[] animationUpDown;
     protected Picture[] animationLeft;
     protected Picture[] animationRight;
     protected CharacterPosition characterPosition;

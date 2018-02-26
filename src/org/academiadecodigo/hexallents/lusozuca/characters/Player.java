@@ -1,33 +1,30 @@
 package org.academiadecodigo.hexallents.lusozuca.characters;
 
-import org.academiadecodigo.hexallents.lusozuca.CollisionDetector;
 import org.academiadecodigo.hexallents.lusozuca.Direction;
+import org.academiadecodigo.hexallents.lusozuca.GameObjects.GameObject;
 import org.academiadecodigo.hexallents.lusozuca.Sound;
 import org.academiadecodigo.hexallents.lusozuca.position.CharacterPosition;
 import org.academiadecodigo.hexallents.lusozuca.position.Position;
-import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
 import org.academiadecodigo.hexallents.lusozuca.stage.StageBackground;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
-import org.academiadecodigo.simplegraphics.pictures.Picture;
 
-public class Player implements KeyboardHandler {
-    private CharacterPosition pos;
-    private Stage stage;
-    private CollisionDetector collisionDetector;
+public class Player extends GameObject implements KeyboardHandler {
+
+    private Direction vertical;
+    private Direction horizontal;
     private boolean jump;
-    private boolean gravity = true; // when it's true, activates the pullDown method, so he falls
-    private boolean dead = false; // game stops and only thing u can do to continue is restart or rewind;
     private Sound jumpSound;
+    private CharacterPosition pos;
 
-
-    public Player(CharacterPosition startingCharacterPosition) {
-
-        this.pos = startingCharacterPosition;
-
+    public Player(Position pos) {
+        super(pos);
+        this.pos = (CharacterPosition) pos;
         pos.setColor(StageBackground.RED);
+        vertical = Direction.DOWN;
+        horizontal = Direction.NONE;
 
         jumpSound = new Sound("/resources/sounds/Mario-jump-sound-effect-free-download.wav");
 
@@ -60,72 +57,67 @@ public class Player implements KeyboardHandler {
 
     }
 
-    @Override //Ainda está por resolver a situação de poder andar para a direita e para a esquerda
-    //dentro das plataformas.
+    //FIXME: Ainda está por resolver a situação de poder andar para a direita e para a esquerda dentro das plataformas.
+    @Override
     public void keyPressed(KeyboardEvent e) {
-        //if(!isDead()&&!isGravity()){
-
         switch (e.getKey()) {
             case KeyboardEvent.KEY_LEFT:
-                pos.moveDirection(Direction.LEFT, 1);
+                horizontal = Direction.LEFT;
                 break;
             case KeyboardEvent.KEY_RIGHT:
-                pos.moveDirection(Direction.RIGHT, 1);
+                horizontal = Direction.RIGHT;
+                break;
+            case KeyboardEvent.KEY_SPACE:
+                vertical = Direction.UP;
+                jumpSound.play(true);
                 break;
         }
-
-        if (e.getKey() == KeyboardEvent.KEY_SPACE && !gravity && !collisionDetector.onStairs()) {
-            jump=true;
-            jumpSound.play(true);
-        }
-
-        if (collisionDetector.onStairs()) {
-
-            switch (e.getKey()) {
-                case KeyboardEvent.KEY_UP:
-                    pos.moveDirection(Direction.UP, 1);
-                    break;
-                case KeyboardEvent.KEY_DOWN:
-                    if(!collisionDetector.onPlatform()) {
-                        pos.moveDirection(Direction.DOWN, 1);
-                        break;
-                    }
-            }
-        }
-    }
-
-    public void setStage(Stage stage) {
-        this.stage = stage;
     }
 
     @Override
     public void keyReleased(KeyboardEvent e) {
+        switch (e.getKey()) {
+            case KeyboardEvent.KEY_LEFT:
+                horizontal = Direction.NONE;
+                break;
+            case KeyboardEvent.KEY_RIGHT:
+                horizontal = Direction.NONE;
+                break;
+            case KeyboardEvent.KEY_SPACE:
+                vertical = Direction.NONE;
+                jumpSound.play(true);
+                break;
+        }
+
     }
-    public CharacterPosition getPos() {
+
+    public void move() {
+        pos.moveDirection(vertical, 1);
+        pos.moveDirection(horizontal, 1);
+    }
+
+    public void setDirection(Direction direction, boolean horizontal) {
+        if (horizontal) {
+            this.horizontal = direction;
+        } else {
+            vertical = direction;
+        }
+    }
+
+    public void stop(boolean horizontal) {
+        if (horizontal) {
+            this.horizontal = Direction.NONE;
+        } else {
+            vertical = Direction.NONE;
+        }
+    }
+
+    public Position getPos() {
         return pos;
     }
 
-    public boolean isDead() {
-        return dead;
+    public boolean isJumping() {
+        return vertical == Direction.UP;
     }
 
-    public void die() {
-        dead = true;
-    }
-
-    public void setOffGravity() {
-        gravity = false;
-    }
-    public void setGravity() {
-        gravity = true;
-    }
-    public void setCollisionDetector(CollisionDetector collisionDetector) {
-        this.collisionDetector = collisionDetector;
-    }
-    public boolean isJumping(){
-        return jump;
-    }
-    public void setJumpOver(){
-        jump = false;
-    }
 }

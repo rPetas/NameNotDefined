@@ -1,21 +1,25 @@
 package org.academiadecodigo.hexallents.lusozuca;
 
+import org.academiadecodigo.hexallents.lusozuca.GameObjects.GameObject;
+import org.academiadecodigo.hexallents.lusozuca.GameObjects.GameObjectsFactory;
+import org.academiadecodigo.hexallents.lusozuca.characters.Player;
+import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
+import org.academiadecodigo.simplegraphics.graphics.Canvas;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello World");
+        Menu startScreen = new Menu("resources/otherScreenz/bg_game.png");
 
+        Stage stage = new Stage(200, 100);
 
-        //Game g = new Game(200, 100, 50);
-        //g.init();
+        GameObject[] go = stage.getGameObjects();
+        Player player = GameObjectsFactory.getPlayer(10, 80, stage);
+        CollisionDetector collisionDetector = new CollisionDetector(go, player);
 
-        try {
-            Game g = new Game(200, 100, 50);
-            g.init();
-            g.start();
-        }catch (InterruptedException ex){
-            System.out.println("some exception");
-            ex.printStackTrace();
-        }
+        Game g = new Game(200, 100, 50, collisionDetector, player);
+
+        InputHandler keyboardHandler = new InputHandler(startScreen, g);
+        g.start();
 
     }
 }

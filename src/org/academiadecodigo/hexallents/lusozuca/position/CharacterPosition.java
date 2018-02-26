@@ -9,38 +9,37 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class CharacterPosition extends Position {
 
-    int frameCounter;
+    private final Stage stage;
+    private int frameCounter;
 
     //Player
     public CharacterPosition(int col, int row, Stage stage) {
         this.col = col;
         this.row = row;
         this.stage = stage;
-        rectangle = new Rectangle(stage.colToPixel(getCol()), stage.rowToPixel(getRow()), 23, 30);
+        rectangle = new Rectangle(Stage.colToPixel(getCol()), Stage.rowToPixel(getRow()), 23, 30);
         this.representation = new Picture(rectangle.getX(), rectangle.getY(), "resources/images/front01.png");
 
         minX = rectangle.getX();
-        maxX = rectangle.getX()+rectangle.getWidth();
+        maxX = rectangle.getX() + rectangle.getWidth();
         minY = rectangle.getY();
-        maxY = rectangle.getY()+rectangle.getHeight();
+        maxY = rectangle.getY() + rectangle.getHeight();
         this.color = StageBackground.NOCOLOR;
         show();
     }
 
     public void moveDirection(Direction direction, int distance) {
 
-        if (frameCounter>3){
-            frameCounter=0;
+        if (frameCounter > 3) {
+            frameCounter = 0;
         }
 
         PlayerAnimation animation = new PlayerAnimation(this);
 
-
-        int previousCol= getCol();
-        int previousRow= getRow();
+        int previousCol = getCol();
+        int previousRow = getRow();
 
         switch (direction) {
-
             case UP:
                 moveUp(distance);
                 break;
@@ -49,7 +48,7 @@ public class CharacterPosition extends Position {
                 break;
             case LEFT:
                 representation.delete();
-                representation= animation.animationLeft(frameCounter++);
+                representation = animation.animationLeft(frameCounter++);
                 moveLeft(distance);
                 break;
             case RIGHT:
@@ -58,7 +57,8 @@ public class CharacterPosition extends Position {
                 moveRight(distance);
                 break;
         }
-        representation.translate((getCol()-previousCol)*Stage.CELL_SIZE,(getRow()-previousRow)*Stage.CELL_SIZE);
+        representation.translate((getCol() - previousCol) * Stage.CELL_SIZE,
+                (getRow() - previousRow) * Stage.CELL_SIZE);
         minX = representation.getX();
         maxX = representation.getMaxX();
         minY = representation.getY();
@@ -70,39 +70,24 @@ public class CharacterPosition extends Position {
         setPos(getCol(), getRow() - maxRowsUp);
     }
 
-
     public void moveDown(int distance) {
-        int maxRowsDown = distance > getStage().getRow() - (getRow() + 1) ? getStage().getRow() - (getRow() + 1) : distance;
+        int maxRowsDown = distance > stage.getRows() - (getRow() + 1) ? stage.getRows() - (getRow() + 1) : distance;
         setPos(getCol(), getRow() + maxRowsDown);
     }
-
 
     public void moveLeft(int distance) {
         int maxRowsLeft = distance < getCol() ? distance : getCol();
         setPos(getCol() - maxRowsLeft, getRow());
     }
 
-
     public void moveRight(int distance) {
-        int maxRowsRight = distance > getStage().getCol() - (getCol() + 1) ? getStage().getCol() - (getCol() + 1) : distance;
+        int maxRowsRight = distance > stage.getColumns() - (getCol() + 1) ? stage.getColumns() - (getCol() +
+                1) : distance;
         setPos(getCol() + maxRowsRight, getRow());
     }
 
-
-
-
-
     public void show() {
         representation.draw();
-
-    }
-
-    public void hide() {
-        rectangle.delete();
-    }
-
-    public Stage getStage() {
-        return stage;
     }
 
     public void setPos(int col, int row) {
@@ -121,7 +106,6 @@ public class CharacterPosition extends Position {
 
     public StageBackground getColor() {
         return color;
-
     }
 
     public void setColor(StageBackground color) {
@@ -129,8 +113,6 @@ public class CharacterPosition extends Position {
         this.color = color;
         show();
     }
-
-
 
 }
 

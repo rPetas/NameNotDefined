@@ -5,18 +5,18 @@ import org.academiadecodigo.hexallents.lusozuca.stage.SimpleGfxColorMapper;
 import org.academiadecodigo.hexallents.lusozuca.stage.Stage;
 import org.academiadecodigo.hexallents.lusozuca.stage.StageBackground;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
-import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class PlatformPosition extends Position {
 
-    public PlatformPosition(int col, int row, Stage stage, int numberOfBlocks) {
-        rectangle = new Rectangle(stage.colToPixel(col), stage.rowToPixel(row), Stage.CELL_SIZE * Platform.BLOCK_SIZE * numberOfBlocks, Stage.CELL_SIZE * Platform.BLOCK_SIZE);
+    public PlatformPosition(int col, int row, int numberOfBlocks) {
+        rectangle = new Rectangle(Stage.colToPixel(col), Stage.rowToPixel(row),
+                Stage.CELL_SIZE * Platform.BLOCK_SIZE * numberOfBlocks, Stage.CELL_SIZE * Platform.BLOCK_SIZE);
 
         color = StageBackground.NOCOLOR;
         minX = rectangle.getX();
-        maxX = rectangle.getX()+rectangle.getWidth();
+        maxX = rectangle.getX() + rectangle.getWidth();
         minY = rectangle.getY();
-        maxY = rectangle.getY()+rectangle.getHeight();
+        maxY = rectangle.getY() + rectangle.getHeight();
         //show();
     }
 
@@ -27,4 +27,8 @@ public class PlatformPosition extends Position {
 
     }
 
+    @Override
+    public String toString() {
+        return rectangle.toString();
+    }
 }
